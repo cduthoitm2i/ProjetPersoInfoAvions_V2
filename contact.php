@@ -1,6 +1,8 @@
 <?php
 include_once 'header_contact.php';
 require_once("./inc/init.inc.php");
+
+
 // Message de fin
 $reponses = [];
 // Vérification du bon remplissage de tous les champs
