@@ -94,27 +94,6 @@ div.card {
   border: 0px;
 }
 
-/* CSS pour page de contact*/
-
-.custom-file-button input[type=file] {
-  margin-left: -2px !important;
-}
-
-.custom-file-button input[type=file]::-webkit-file-upload-button {
-  display: none;
-}
-
-.custom-file-button input[type=file]::file-selector-button {
-  display: none;
-}
-
-.custom-file-button:hover label {
-  background-color: #dde0e3;
-  cursor: pointer;
-}
-
-
-
 
 /* General Styles*/
 body {
@@ -183,6 +162,7 @@ table.dataTable thead .sorting_desc_disabled:after {
 img.boutique{
   width: 200px;
   }
+
 /* Petit effet de zomm au passage de la souris sur l'image et on ajoute la compatibilité avec tous les navigateurs */
 img.boutique:hover{
     -ms-transform: scale(1.5); /* IE 9 */
@@ -192,25 +172,3 @@ img.boutique:hover{
     }
 
 
-/* CSS temporaire à supprimer certainement plus tard */
-/**************************************************** HAUT ************************************************/
-header { background: #000000; padding: 5px; text-align: center; }
-header  span{ color: #fff; font-weight: bold; text-transform: uppercase; margin-right: 5%; }
-header  nav{ display: inline; }
-header  a{ color: #ffffff; text-decoration: none; padding: 5px; }
-/*header  nav  a:hover{ background: #04baf6; }*/
-/**************************************************** MILIEU ************************************************/
-section{ padding: 30px; min-height: 800px; }
-/**************************************************** BAS ************************************************/
-footer{ background: #000; color: white; text-align: center; padding: 7px 0;}
-/**************************************************** GENERAL ************************************************/
-.erreur{ background: #ff0000; padding: 5px; margin: 5px; }
-.validation{ background: #669933; padding: 5px; margin: 5px; }
-/**************************************************** BOUTIQUE ************************************************/   
-.boutique-gauche{ float: left; background: #f2f2f2; min-height: 500px; margin-right: 10%; padding-top: 10px; text-align: center; }
-.boutique-gauche  ul{ list-style: none; padding: 0; }
-.boutique-gauche  ul  li  a{ display: block; padding: 10px; }
-.boutique-gauche  ul  li  a:hover{ background: #04baf6; color: #fff; }
-.boutique-droite{float: left; }
-.boutique-produit{ float: left; text-align: center; padding: 5%; border-bottom: 1px solid #c0c0c0; }
-.boutique-produit:hover{ background: #c0c0c0;}
