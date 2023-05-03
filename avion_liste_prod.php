@@ -60,6 +60,8 @@ include_once 'header.php';
                         } catch (PDOException $e) {
                             echo "Error: " . $e->getMessage();
                         } ?>
+                        <br>
+                        <p style="text-align:right"><a href="./impPDF.php">Enregister la liste au format PDF</a></p>
                             </div>
                         </div>
                     </div>
