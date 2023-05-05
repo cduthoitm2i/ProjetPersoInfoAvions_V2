@@ -61,7 +61,7 @@ include_once 'header.php';
                             echo "Error: " . $e->getMessage();
                         } ?>
                         <br>
-                        <p style="text-align:right"><a href="./impPDF.php">Enregister la liste au format PDF</a></p>
+                        <p style="text-align:right"><a href="./impPDF.php">Enregistrer la liste au format PDF</a></p>
                             </div>
                         </div>
                     </div>

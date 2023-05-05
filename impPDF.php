@@ -19,8 +19,6 @@
    // 168 pour format à l'italienne
    $espaceDisponible = $hauteurPage - ($hauteurMarge + $hauteurMarge + $hauteurEntete + 12);
    $nombreDeLignes = floor($espaceDisponible / $hauteurLigne);
-   
-
 
    $pdf->AddPage();
    $pdf->SetMargins(10,$hauteurMarge);
@@ -29,7 +27,6 @@
    $pdf->SetDrawColor(0,0,0); // noir
    $pdf->SetFillColor(199,199,199); // gris
    $pdf->SetTextColor(0,0,0); // noir
-
 
    try {
       $pdo = new PDO("mysql:host=mysql-cduthoit59.alwaysdata.net;dbname=cduthoit59_bd_avions_airbus;port=3306", "308217", "Q7NxCwCkazcbUsj");
@@ -41,15 +38,14 @@
       $sql = "SELECT numero_serie_avion, modele_avion, nom_compagnie, date_premier_vol_avion, immatriculation_compagnie_avion, statut_avion FROM `avion`";
       $curseur = $pdo->query($sql);
 
-         // Création de la tétière du tableau
-         // --- Cell(largeur, hauteur, texte, bord, placement, alignement, remplissage, lien)
-         $pdf->Cell(15, $hauteurEntete, "MSN", 1, 0, 'C', 1);
-         $pdf->Cell(60, $hauteurEntete, "Type", 1, 0, 'C', 1);
-         $pdf->Cell(80, $hauteurEntete, iconv('UTF-8', 'windows-1252', "Opérateur"), 1, 0, 'C', 1);
-         $pdf->Cell(30, $hauteurEntete, "Premier vol", 1, 0, 'C', 1);
-         $pdf->Cell(40, $hauteurEntete, "Immatriculation", 1, 0, 'C', 1);
-         $pdf->Cell(35, $hauteurEntete, "Statut", 1, 1, 'C', 1);
-
+      // Création de la tétière du tableau
+      // --- Cell(largeur, hauteur, texte, bord, placement, alignement, remplissage, lien)
+      $pdf->Cell(15, $hauteurEntete, "MSN", 1, 0, 'C', 1);
+      $pdf->Cell(60, $hauteurEntete, "Type", 1, 0, 'C', 1);
+      $pdf->Cell(80, $hauteurEntete, iconv('UTF-8', 'windows-1252', "Opérateur"), 1, 0, 'C', 1);
+      $pdf->Cell(30, $hauteurEntete, "Premier vol", 1, 0, 'C', 1);
+      $pdf->Cell(40, $hauteurEntete, "Immatriculation", 1, 0, 'C', 1);
+      $pdf->Cell(35, $hauteurEntete, "Statut", 1, 1, 'C', 1);
 
       $lignes = 1; // initialisation du compteur de lignes
 
@@ -82,14 +78,8 @@
 
       // --- Sauvegarde vers un fichier
       $pdf->Output('D', 'liste.pdf', true);
-
-      // --- Redirection vers le disque
-//      $pdf->Output("F", "../outputs/villes.pdf");
-//      echo "Fichier cr&eacute;&eacute; sur le disque";
    }
-
    catch(PDOException $e) {
       echo "Echec de l'exécution : " . $e->getMessage();
    }
-
    $pdo = null;
