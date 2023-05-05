@@ -34,9 +34,10 @@
       // --- pour afficher plus bas les caractères accentués
       $pdo->exec("SET NAMES 'UTF8'");
 
-      $sql = "SELECT numero_serie_avion, modele_avion, nom_compagnie, date_premier_vol_avion, immatriculation_compagnie_avion, statut_avion FROM `avion`";
+      $sql = "SELECT numero_serie_avion, modele_avion, nom_compagnie, date_premier_vol_avion, immatriculation_compagnie_avion, statut_avion FROM `avion` WHERE nom_avion = 'A320'";
       $curseur = $pdo->query($sql);
-
+      // Pour mettre en gras le texte de la tétière
+      $pdf->SetFont('Arial','B',12);
       // Création de la tétière du tableau
       // --- Cell(largeur, hauteur, texte, bord, placement, alignement, remplissage, lien)
       $pdf->Cell(15, $hauteurEntete, "MSN", 1, 0, 'C', 1);
@@ -52,7 +53,8 @@
          // Création de la tétière du tableau qui sera répétée à partir de la page 2
           if($lignes % $nombreDeLignes == 0) { // si on a atteint la limite de 45 lignes (format A4), on ajoute une nouvelle page
               $pdf->AddPage();
-              $pdf->SetFont('Arial','',12);
+              // Pour mettre en gras le texte de la tétière pour les pages suivantes
+              $pdf->SetFont('Arial','B',12);
               $pdf->SetMargins(10,$hauteurMarge);
               $pdf->Cell(15, $hauteurEntete, "MSN", 1, 0, 'C', 1);
               $pdf->Cell(60, $hauteurEntete, "Type", 1, 0, 'C', 1);
@@ -62,7 +64,8 @@
               $pdf->Cell(35, $hauteurEntete, "Statut", 1, 1, 'C', 1);
             //   $lignes = 0; // réinitialisation du compteur de lignes
           }
-      
+          // On repasse en romain pour toutes les lignes du tableau hors tétière
+          $pdf->SetFont('Arial','',12);
           // Cell(Largeur, Hauteur, Texte, [Bords, RC , Alignement, Remplissage, Lien])
           $pdf->Cell(15, $hauteurLigne, mb_convert_encoding($enregistrement['numero_serie_avion'], "ISO-8859-1"), 1 , 0, 'C', 0);
           $pdf->Cell(60, $hauteurLigne, mb_convert_encoding($enregistrement['modele_avion'], "ISO-8859-1"), 1 , 0, 'L', 0);
@@ -76,7 +79,7 @@
       $curseur->closeCursor();
 
       // --- Sauvegarde vers un fichier
-      $pdf->Output('D', 'liste.pdf', true);
+      $pdf->Output('D', 'liste_a320.pdf', true);
    }
    catch(PDOException $e) {
       echo "Echec de l'exécution : " . $e->getMessage();

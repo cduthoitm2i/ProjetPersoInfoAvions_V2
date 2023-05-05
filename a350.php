@@ -37,12 +37,12 @@ include_once 'header.php';
                                 <table id="liste_avion" style="width:100%" class="table table-bordered table-hover dt-responsive">
                                     <thead>
                                         <tr>
-                                            <th style="text-align:center;vertical-align:middle">MSN</th>
-                                            <th style="text-align:center;vertical-align:middle">Type</th>
-                                            <th style="text-align:center;vertical-align:middle">Opérateur</th>
-                                            <th style="text-align:center;vertical-align:middle">Premier vol</th>
-                                            <th style="text-align:center;vertical-align:middle">Immatriculation</th>
-                                            <th style="text-align:center;vertical-align:middle">Statut</th>
+                                            <th style="text-align:center;vertical-align:middle"><strong>MSN</strong></th>
+                                            <th style="text-align:center;vertical-align:middle"><strong>Type</strong></th>
+                                            <th style="text-align:center;vertical-align:middle"><strong>Opérateur</strong></th>
+                                            <th style="text-align:center;vertical-align:middle"><strong>Premier vol</strong></th>
+                                            <th style="text-align:center;vertical-align:middle"><strong>Immatriculation</strong></th>
+                                            <th style="text-align:center;vertical-align:middle"><strong>Statut</strong></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -68,7 +68,7 @@ include_once 'header.php';
                             echo "Error: " . $e->getMessage();
                         } ?>
                             <br>
-                            <p style="text-align:right"><a href="./impPDF.php">Enregistrer la liste au format PDF</a></p>
+                            <p style="text-align:right"><a href="./impPDFa350.php">Enregistrer la liste au format PDF</a></p>
                             </div>
                         </div>
                     </div>

@@ -3,31 +3,32 @@ include_once 'header.php';
 ?>
 <section>
     <div class="container">
-        <h1>Liste production Airbus A318</h1>
+        <h1>Liste production Airbus <?php $type= $_GET['nom_avion']?></h1>
         <?php
-
-        /* Tests.php */
-
         require_once './lib/Connexion.php';
-        require_once './daos/clientDAOa318.php';
-
+        require_once './daos/clientDAOprod.php';
+        // Ajout pour supprimer les fichiers en trop
+        $type= filter_input(INPUT_GET,"type");
         $pdo = seConnecter("./conf/monsite.ini");
 
         // var_dump ($pdo);
 
-        //echo "<hr>Sélection de la base avion<hr>";
+        //echo "Sélection de la base avion";
         $content = "";
         $lines = selectAllPourListeTab($pdo);
-
         $headers = "";
-
 
         // Extraction des autres enregistrements et on affiche dans les balises html
         // On fait le corps du tableau
         // On boucle sur les colonnes à l'intérieur de la boucle pour les lignes
         try {
-            $query = "SELECT numero_serie_avion, modele_avion, nom_compagnie, date_premier_vol_avion, immatriculation_compagnie_avion, statut_avion FROM `avion` WHERE nom_avion = 'A318'";
-            $result = $pdo->query($query);
+            $query = "SELECT numero_serie_avion, modele_avion, nom_compagnie, date_premier_vol_avion, immatriculation_compagnie_avion, statut_avion FROM `avion` WHERE nom_avion = ? ";
+
+            // Ajout pour éviter les fichiers en trop
+            $cursor = $pdo->prepare($query);
+            $cursor->bindValue(1, $type);
+            $cursor->execute();
+
         ?>
             <div class="row py-5">
                 <div class="col-lg-12 mx-auto">
@@ -37,12 +38,12 @@ include_once 'header.php';
                                 <table id="liste_avion" style="width:100%" class="table table-bordered table-hover dt-responsive">
                                     <thead>
                                         <tr>
-                                            <th style="text-align:center;vertical-align:middle"><strong>MSN</strong></th>
-                                            <th style="text-align:center;vertical-align:middle"><strong>Type</strong></th>
-                                            <th style="text-align:center;vertical-align:middle"><strong>Opérateur</strong></th>
-                                            <th style="text-align:center;vertical-align:middle"><strong>Premier vol</strong></th>
-                                            <th style="text-align:center;vertical-align:middle"><strong>Immatriculation</strong></th>
-                                            <th style="text-align:center;vertical-align:middle"><strong>Statut</strong></th>
+                                            <th style="text-align:center;vertical-align:middle">MSN</th>
+                                            <th style="text-align:center;vertical-align:middle">Type</th>
+                                            <th style="text-align:center;vertical-align:middle">Opérateur</th>
+                                            <th style="text-align:center;vertical-align:middle">Premier vol</th>
+                                            <th style="text-align:center;vertical-align:middle">Immatriculation</th>
+                                            <th style="text-align:center;vertical-align:middle">Statut</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -68,7 +69,7 @@ include_once 'header.php';
                             echo "Error: " . $e->getMessage();
                         } ?>
                             <br>
-                            <p style="text-align:right"><a href="./impPDFa318.php">Enregistrer la liste au format PDF</a></p>
+                            <p style="text-align:right"><a href="./impPDF.php">Enregistrer la liste au format PDF</a></p>
                             </div>
                         </div>
                     </div>
