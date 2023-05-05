@@ -20,7 +20,6 @@ include_once 'header.php';
                 <label class="form-label" for="pwd">Mot de passe&nbsp;:</label>
                 <small id="mdpAide" class="form-text text-muted">Saisir votre mot de passe</small>
               </div>
-
               <div class="form-check mb-3">
                 <input class="form-check-input" type="checkbox" value="" id="rememberPasswordCheck" name="rememberPasswordCheck">
                 <label class="form-check-label" for="rememberPasswordCheck">Mot de passe visible</label>
@@ -37,20 +36,18 @@ include_once 'header.php';
                 // Messages d'erreur
                 if (isset($_GET["error"])) {
                   if ($_GET["error"] == "emptyinput") {
-                    echo "<p>Renseigner tous les champs&nbsp;!</p>";
+                    echo "<div class='alert alert-danger' role='alert'>Renseigner tous les champs&nbsp;!</div>";
                   } else if ($_GET["error"] == "wronglogin") {
-                    echo "<p>Mauvais login&nbsp;!</p>";
+                    echo "<div class='alert alert-danger' role='alert'>Mauvais login&nbsp;!</div>";
                   }
                 } ?>
               </label>
-
             </form>
           </div>
         </div>
       </div>
     </div>
   </div>
-
 </section>
 <?php
 include_once 'footer.php';
