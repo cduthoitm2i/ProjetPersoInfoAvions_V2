@@ -69,6 +69,8 @@
 
                                 <tbody>
                                     <tr>
+                                        <!--Syntaxe pour éviter un tas de fichier en trop-->
+                                        <!--<td><a href="select_type_avion.php?type=a220">Airbus A220</a></td>-->
                                         <td><a href="a220.php">Airbus A220</a></td>
                                         <td><a href="a300.php">Airbus A300</a></td>
                                         <td><a href="a310.php">Airbus A310</a></td>
