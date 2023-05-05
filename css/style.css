@@ -154,8 +154,11 @@ table.dataTable thead .sorting_asc:after,
 table.dataTable thead .sorting_desc:after,
 table.dataTable thead .sorting_asc_disabled:after,
 table.dataTable thead .sorting_desc_disabled:after {
-  content: '';
+  /*content: '';*/
+  visibility: hidden;
 }
+
+
 
 /* CSS pour page boutique */
 /* toutes les images à 200px*/
