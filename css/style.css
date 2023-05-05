@@ -175,3 +175,8 @@ img.boutique:hover{
     }
 
 
+/* CSS pour le random image sur la page d'accueil*/
+#randpic{
+  width: 500px;
+  text-align: center;
+}
