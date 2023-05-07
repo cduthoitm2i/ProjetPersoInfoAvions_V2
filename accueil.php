@@ -109,7 +109,7 @@ include_once 'header.php';
                                     if (in_array($ext, $ext_array)) {
                                         $file_path = $path . $file; ?>
                                         <div class="col-md-4 col-xs-6 mb-2">
-                                            <a href="<?php echo $file_path; ?>" title="My Favorites" data-gallery><img style="width:150px;height:100px" src="<?php echo $file_path; ?>" class="img-responsive" /></a>
+                                            <a href="<?php echo $file_path; ?>" title="Dernières photos publiées" data-gallery><img style="width:150px;height:100px" src="<?php echo $file_path; ?>" class="img-responsive" /></a>
                                         </div>
                             <?php }
                                 }
