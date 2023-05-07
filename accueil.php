@@ -55,7 +55,7 @@ include_once 'header.php';
                     <div class="card-body">
                         <h5 class="card-title">Photos récentes</h5>
                         <div id="randpic" style="width: 450px;"></div>
-                        <img src="./images/photos/image1.png" width="450px" class="img-fluid start" alt="...">
+                        <!--<img src="./images/photos/image1.png" width="450px" class="img-fluid start" alt="...">-->
                     </div>
                 </div>
 
@@ -98,23 +98,26 @@ include_once 'header.php';
                     <div class="card-body">
                         <h5 class="card-title">Dernières photos publiées</h5>
                         <div class="row">
-                            <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
-                                <img src="./images/pas_de_photo.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="" />
-
-                                <img src="./images/pas_de_photo.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="" />
-                            </div>
-
-                            <div class="col-lg-4 mb-4 mb-lg-0">
-                                <img src="./images/pas_de_photo.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="" />
-
-                                <img src="./images/pas_de_photo.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="" />
-                            </div>
-
-                            <div class="col-lg-4 mb-4 mb-lg-0">
-                                <img src="./images/europe.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="" />
-
-                                <img src="./images/europe.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="" />
-                            </div>
+                            <?php
+                            $path = "./images/photos_recente/"; // chemin vers le dossier des images
+                            $file_count = count(glob($path . "*.{png,jpg,jpeg,gif}", GLOB_BRACE));
+                            if ($file_count > 0) {
+                                $fp = opendir($path);
+                                while ($file = readdir($fp)) {
+                                    $ext = pathinfo($file, PATHINFO_EXTENSION);
+                                    $ext_array = ['png', 'jpg', 'jpeg', 'gif'];
+                                    if (in_array($ext, $ext_array)) {
+                                        $file_path = $path . $file; ?>
+                                        <div class="col-md-4 col-xs-6 mb-2">
+                                            <a href="<?php echo $file_path; ?>" title="My Favorites" data-gallery><img style="width:150px;height:100px" src="<?php echo $file_path; ?>" class="img-responsive" /></a>
+                                        </div>
+                            <?php }
+                                }
+                                closedir($fp);
+                            } else {
+                                echo "Désolé! Pas d'images dans la galerie!!!";
+                            }
+                            ?>
                         </div>
                         <p class="p-2 card-text text-end"><a href="#">Voir l'ensemble du Top photo 24&nbsp;h</a></p>
                     </div>
