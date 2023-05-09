@@ -8,7 +8,7 @@ include_once 'header.php';
         require_once './lib/Connexion.php';
         require_once './daos/clientDAOprod.php';
         $pdo = seConnecter("./conf/monsite.ini");
-
+        session_start();
         // var_dump ($pdo);
 
         //echo "Sélection de la base avion";
@@ -44,8 +44,8 @@ include_once 'header.php';
 
                                         ?>
                                             <tr>
-                                                <td class='small'><a href="./ficheAvion.php"><?php echo $data['numero_serie_avion']; ?></a></td>
-                                                <td class='small'><?php echo $data['modele_avion']; ?></td>
+                                                <td class='small'><a href="./ficheAvion.php"><?php echo $_POST($data['numero_serie_avion']); ?></a></td>
+                                                <td class='small'><?php echo $_POST($data['modele_avion']); ?></td>
                                                 <td class='small'><a href="./ficheCompagnie.php"><?php echo $data['nom_compagnie']; ?></a></td>
                                                 <td class='small'><?php echo $data['date_premier_vol_avion']; ?></td>
                                                 <td class='small'><a href="#"><?php echo $data['immatriculation_compagnie_avion']; ?></a></td>

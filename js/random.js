@@ -27,7 +27,7 @@ function randomImage() {
 }
 
 function getRandomTime() {
-        return 10000;
+        return 5000;
     // return Math.round(Math.random() * 5000);
 }
 

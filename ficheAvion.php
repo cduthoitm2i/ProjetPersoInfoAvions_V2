@@ -1,6 +1,8 @@
 <?php
 include_once 'header.php';
 require_once './entities/Avions.php';
+$ModeleAvion=$_GET['modele_avion'];
+$MSN=$_GET['numero_serie_avion'];
 ?>
 <section>
     <div class="container">
@@ -13,8 +15,8 @@ require_once './entities/Avions.php';
                         <?php
                         require_once("./entities/Avions.php");
                         $info = new Avions();
-                        $info->setnumeroSerieAvion("50010");
-                        $info->setmodeleAvion("Airbus A220 CS100");
+                        $info->setnumeroSerieAvion("$MSN");
+                        $info->setmodeleAvion("$ModeleAvion");
                         $info->setnomCompagnie("Swiss International Air Lines");
                         ?>
                         <table class="table table-sm table-borderless">
