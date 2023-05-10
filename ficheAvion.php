@@ -1,8 +1,20 @@
 <?php
 include_once 'header.php';
 require_once './entities/Avions.php';
-$numero_serie_avion=$_GET['MSN'];
-$modele_avion=$_GET['modeleavion'];
+$numeroSerieAvion = $_GET['numeroSerieAvion'];
+$nomAvion = $_GET['nomAvion'];
+$modeleAvion = $_GET['modeleAvion'];
+$nomCompagnie = $_GET['nomCompagnie'];
+$datePremierVol = $_GET['datePremierVol'];
+$immatEssai = $_GET['immatEssai'];
+$immatCompagnie = $_GET['immatCompagnie'];
+$confF = $_GET['confF'];
+$confC = $_GET['confC'];
+$confW = $_GET['confW'];
+$confY = $_GET['confY'];
+$hexcode = $_GET['hexcode'];
+$moteur = $_GET['moteur'];
+$statut = $_GET['statut'];
 ?>
 <section>
     <div class="container">
@@ -10,8 +22,9 @@ $modele_avion=$_GET['modeleavion'];
             <div class="col">
                 <div class="card mb-5">
                     <div class="card-body">
-                        <h5 class="card-title"><!--<?php echo $data['modele_avion']; ?> MSN <?php echo $data['numero_serie_avion']; ?> <?php echo $data['immatriculation_compagnie_avion']; ?>-->
-                            Modèle avion, numéro de série, immatriculation</h5>
+                        <h5 class="card-title">Airbus <?php echo "$nomAvion" ?>, MSN <?php echo "$numeroSerieAvion" ?>, <?php echo "$immatCompagnie" ?>
+                            <!--Modèle avion, numéro de série, immatriculation-->
+                        </h5>
                         <?php
                         require_once("./entities/Avions.php");
                         ?>
@@ -19,55 +32,82 @@ $modele_avion=$_GET['modeleavion'];
 
                             <tbody>
                                 <tr>
-                                    <td>Numéro de série&nbsp;:</td>
-                                    <td><?php echo $numero_serie_avion ?></td>
+                                    <td class="col-md-3 small">Numéro de série&nbsp;:</td>
+                                    <td class="col-md-4 small"><?php echo "$numeroSerieAvion" ?></td>
                                 </tr>
                                 <tr>
-                                    <td>Type&nbsp;:</td>
-                                    <td><?php echo $modele_avion ?></td>
+                                    <td class="col-md-3 small">Type&nbsp;:</td>
+                                    <td class="col-md-4 small"><?php echo "$modeleAvion" ?></td>
                                 </tr>
                                 <tr>
-                                    <td>Date premier vol&nbsp;:</td>
-                                    <td></td>
+                                    <td class="col-md-3 small">Date premier vol&nbsp;:</td>
+                                    <td class="col-md-4 small"><?php echo "$datePremierVol" ?></td>
                                 </tr>
                                 <tr>
-                                    <td>Immatriculation d'essai&nbsp;:</td>
-                                    <td></td>
+                                    <td class="col-md-3 small">Immatriculation essai&nbsp;:</td>
+                                    <td class="col-md-4 small"><?php echo "$immatEssai" ?></td>
                                 </tr>
                                 <tr>
-                                    <td>Age de l'avion&nbsp;:</td>
-                                    <td></td>
+                                    <td class="col-md-3 small">Age de l'avion&nbsp;:</td>
+                                    <td class="col-md-4 small"><?php
+                                                                $aujourdhui = date("Y-m-d");
+                                                                $diff = date_diff(date_create($datePremierVol), date_create($aujourdhui));
+                                                                echo $diff->format('%y,%m' . '&nbsp;ans'); ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-3 small">Config sièges&nbsp;:</td>
+                                    <td class="col-md-4 small">
+
+                                        <!--<a href="#" data-toggle="tooltip" data-placement="top" title="Première classe"><?php echo "$confF" ?>C12</a><br/>-->
+
+                                        
+                                        <?php echo "$confF" ?> <?php echo "$confC" ?> <?php echo "$confW" ?> <?php echo "$confY" ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-3 small">Hex Code&nbsp;:</td>
+                                    <td class="col-md-4 small"><a href="https://globe.adsbexchange.com/?icao=<?php echo "$hexcode" ?>" target="_blank"><?php echo "$hexcode" ?></a></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-3 small">Motorisation&nbsp;:</td>
+                                    <td class="col-md-4 small"><?php echo "$moteur" ?></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-3 small">Statut&nbsp;:</td>
+                                    <td class="col-md-4 small"><?php echo "$statut" ?></td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
+
             <div class="col">
                 <div class="card mb-5">
                     <div class="card-body">
-                        <h5 class="card-title">DERNIER OPÉRATEUR Nom compagnie</h5>
+                        <h5 class="card-title">DERNIER OPÉRATEUR&nbsp;: <?php echo "$nomCompagnie" ?></h5>
                         <table class="table table-sm table-borderless">
                             <tbody>
                                 <tr>
-                                    <td>Pays&nbsp;:</td>
-                                    <td>drapeau image</td>
+                                    <td class="small">Pays&nbsp;:</td>
+                                    <td class="small">drapeau image</td>
                                 </tr>
                                 <tr>
-                                    <td>Date&nbsp;:</td>
-                                    <td></td>
+                                    <td class="small">Date&nbsp;:</td>
+                                    <td class="small"></td>
                                 </tr>
                                 <tr>
-                                    <td>Code&nbsp;:</td>
-                                    <td></td>
+                                    <td class="small">Code&nbsp;:</td>
+                                    <td class="small"></td>
                                 </tr>
                                 <tr>
-                                    <td>Callsign&nbsp;:</td>
-                                    <td></td>
+                                    <td class="small">Callsign&nbsp;:</td>
+                                    <td class="small"></td>
                                 </tr>
                                 <tr>
-                                    <td>siteweb&nbsp;:</td>
-                                    <td>www.xxx.com</td>
+                                    <td class="small">siteweb&nbsp;:</td>
+                                    <td class="small">www.xxx.com</td>
                                 </tr>
                             </tbody>
                         </table>

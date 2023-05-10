@@ -132,10 +132,17 @@ include_once 'includes/functions.inc.php';
             <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i></a>
           </li>
         </ul>
-        <form class="d-flex" role="search" method="GET" action="">
+        <form class="d-flex" role="search" method="GET" action="./controllers/SearchControllerInTableVersion1.php">
           <input class="form-control me-2" type="search" aria-label="Search" placeholder="Recherche...">
           <button class="btn btn-outline-success" type="submit">Rechercher</button>
         </form>
+        <p>
+            <?php
+            if (isSet($result)) {
+                echo $result;
+            }
+            ?>
+        </p>
       </div>
     </div>
   </nav>

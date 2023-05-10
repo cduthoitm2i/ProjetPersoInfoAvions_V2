@@ -14,10 +14,8 @@ include_once 'header.php';
         $content = "";
         $lines = selectAllPourListeTab($pdo);
         $headers = "";
-        $MSN ="";
-
         try {
-            $query = "SELECT numero_serie_avion, modele_avion, nom_compagnie, date_premier_vol_avion, immatriculation_compagnie_avion, statut_avion FROM `avion`";
+            $query = "SELECT numero_serie_avion, nom_avion, modele_avion, nom_compagnie, date_premier_vol_avion, immatriculation_compagnie_avion, statut_avion, immatriculation_essai_avion, config_siege_avion_F, config_siege_avion_C, config_siege_avion_W, config_siege_avion_Y, hex_code_avion, motorisation_avion FROM `avion`";
             $result = $pdo->query($query);
         ?>
 
@@ -43,7 +41,7 @@ include_once 'header.php';
 
                                         ?>
                                             <tr>
-                                                <td class='small'><a href="./ficheAvion.php?MSN='<?php echo $data['numero_serie_avion'] ?>'?modeleavion='<?php echo $data['modele_avion'] ?>'"><?php echo $data['numero_serie_avion'] ?></a></td>
+                                                <td class='small'><a href="./ficheAvion.php?numeroSerieAvion=<?php echo $data['numero_serie_avion'] ?>&nomAvion=<?php echo $data['nom_avion']; ?>&modeleAvion=<?php echo $data['modele_avion']; ?>&nomCompagnie=<?php echo $data['nom_compagnie']; ?>&datePremierVol=<?php echo $data['date_premier_vol_avion'] ?>&immatEssai=<?php echo $data['immatriculation_essai_avion'] ?>&immatCompagnie=<?php echo $data['immatriculation_compagnie_avion'] ?>&confF=<?php echo $data['config_siege_avion_F'] ?>&confC=<?php echo $data['config_siege_avion_C'] ?>&confW=<?php echo $data['config_siege_avion_W'] ?>&confY=<?php echo $data['config_siege_avion_Y'] ?>&hexcode=<?php echo $data['hex_code_avion'] ?>&moteur=<?php echo $data['motorisation_avion'] ?>&statut=<?php echo $data['statut_avion'] ?>"><?php echo $data['numero_serie_avion']; ?></a></td>
                                                 <td class='small'><?php echo $data['modele_avion']; ?></td>
                                                 <td class='small'><a href="./ficheCompagnie.php"><?php echo $data['nom_compagnie']; ?></a></td>
                                                 <td class='small'><?php echo $data['date_premier_vol_avion']; ?></td>
@@ -68,7 +66,6 @@ include_once 'header.php';
             </div>
         </div>
     </div>
-
 </section>
 <?php
 include_once 'footer.php';
