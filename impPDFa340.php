@@ -70,7 +70,12 @@
           $pdf->Cell(15, $hauteurLigne, mb_convert_encoding($enregistrement['numero_serie_avion'], "ISO-8859-1"), 1 , 0, 'C', 0);
           $pdf->Cell(60, $hauteurLigne, mb_convert_encoding($enregistrement['modele_avion'], "ISO-8859-1"), 1 , 0, 'L', 0);
           $pdf->Cell(80, $hauteurLigne, mb_convert_encoding($enregistrement['nom_compagnie'], "ISO-8859-1"), 1 , 0, 'L', 0);
-          $pdf->Cell(30, $hauteurLigne, mb_convert_encoding($enregistrement['date_premier_vol_avion'], "ISO-8859-1"), 1 , 0, 'L', 0);
+          $timestamp = strtotime($enregistrement['date_premier_vol_avion']);
+          // On transforme la date au format dd/mm/YYYY 
+          $newdatePremierVol = date("d/m/Y", $timestamp);   
+          //$pdf->Cell(30, $hauteurLigne, mb_convert_encoding($enregistrement['date_premier_vol_avion'], "ISO-8859-1"), 1 , 0, 'L', 0);
+          // On place la nouvelle variable pour le PDF
+          $pdf->Cell(30, $hauteurLigne, mb_convert_encoding($newdatePremierVol, "ISO-8859-1"), 1 , 0, 'L', 0);
           $pdf->Cell(40, $hauteurLigne, mb_convert_encoding($enregistrement['immatriculation_compagnie_avion'], "ISO-8859-1"), 1 , 0, 'L', 0);
           $pdf->Cell(35, $hauteurLigne, mb_convert_encoding($enregistrement['statut_avion'], "ISO-8859-1"), 1 , 1, 'L', 0);
           

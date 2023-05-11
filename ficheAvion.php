@@ -1,20 +1,7 @@
 <?php
 include_once 'header.php';
 require_once './entities/Avions.php';
-$numeroSerieAvion = $_GET['numeroSerieAvion'];
-$nomAvion = $_GET['nomAvion'];
-$modeleAvion = $_GET['modeleAvion'];
-$nomCompagnie = $_GET['nomCompagnie'];
-$datePremierVol = $_GET['datePremierVol'];
-$immatEssai = $_GET['immatEssai'];
-$immatCompagnie = $_GET['immatCompagnie'];
-$confF = $_GET['confF'];
-$confC = $_GET['confC'];
-$confW = $_GET['confW'];
-$confY = $_GET['confY'];
-$hexcode = $_GET['hexcode'];
-$moteur = $_GET['moteur'];
-$statut = $_GET['statut'];
+include './includes/setvariable.php';
 ?>
 <section>
     <div class="container">
@@ -41,7 +28,10 @@ $statut = $_GET['statut'];
                                 </tr>
                                 <tr>
                                     <td class="col-md-3 small">Date premier vol&nbsp;:</td>
-                                    <td class="col-md-4 small"><?php echo "$datePremierVol" ?></td>
+                                    <td class="col-md-4 small"><?php
+                                                                include './partials/conversiondate.php';
+                                                                ?>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td class="col-md-3 small">Immatriculation essai&nbsp;:</td>
@@ -50,18 +40,17 @@ $statut = $_GET['statut'];
                                 <tr>
                                     <td class="col-md-3 small">Age de l'avion&nbsp;:</td>
                                     <td class="col-md-4 small"><?php
-                                                                $aujourdhui = date("Y-m-d");
-                                                                $diff = date_diff(date_create($datePremierVol), date_create($aujourdhui));
-                                                                echo $diff->format('%y.%m' . '&nbsp;ans'); ?>
+                                                                include './partials/ageavion.php';
+                                                                ?>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="col-md-3 small">Config sièges&nbsp;:</td>
+                                    <td class="col-md-3 small">Configuration sièges&nbsp;:</td>
                                     <td class="col-md-4 small">
                                         <a href="#" data-toggle="tooltip" data-placement="top" title="Première classe"><?php echo $confF ?></a>
-                                        <a href="#" data-toggle="tooltip" data-placement="top" title="Classe affaire"><?php echo $confC ?></a>
-                                        <a href="#" data-toggle="tooltip" data-placement="top" title="Classe économique supérieure"><?php echo $confW ?></a>  
-                                        <a href="#" data-toggle="tooltip" data-placement="top" title="Classe économique"><?php echo $confY ?></a>  
+                                        <a href="#" data-toggle="tooltip" data-placement="top" title="<em>Classe affaire</em>"><?php echo $confC ?></a>
+                                        <a href="#" data-toggle="tooltip" data-placement="top" title="Classe économique supérieure"><?php echo $confW ?></a>
+                                        <a href="#" data-toggle="tooltip" data-placement="top" title="Classe économique"><?php echo $confY ?></a>
                                     </td>
                                 </tr>
                                 <tr>
