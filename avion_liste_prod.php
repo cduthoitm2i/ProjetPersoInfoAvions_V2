@@ -15,7 +15,8 @@ include_once 'header.php';
         $lines = selectAllPourListeTab($pdo);
         $headers = "";
         try {
-            $query = "SELECT numero_serie_avion, nom_avion, modele_avion, nom_compagnie, date_premier_vol_avion, immatriculation_compagnie_avion, statut_avion, immatriculation_essai_avion, config_siege_avion_F, config_siege_avion_C, config_siege_avion_W, config_siege_avion_Y, hex_code_avion, motorisation_avion FROM `avion`";
+            //$query = "SELECT numero_serie_avion, nom_avion, modele_avion, nom_compagnie, date_premier_vol_avion, immatriculation_compagnie_avion, statut_avion, immatriculation_essai_avion, config_siege_avion_F, config_siege_avion_C, config_siege_avion_W, config_siege_avion_Y, hex_code_avion, motorisation_avion FROM `avion`";
+            $query = "SELECT * FROM `avion`";
             $result = $pdo->query($query);
         ?>
 
@@ -57,8 +58,8 @@ include_once 'header.php';
                         } catch (PDOException $e) {
                             echo "Error: " . $e->getMessage();
                         } ?>
-                        <br>
-                        <p style="text-align:right"><a href="./impPDF.php">Enregistrer la liste au format PDF</a></p>
+                            <br>
+                            <p style="text-align:right"><a href="./impPDF.php">Enregistrer la liste au format PDF</a></p>
                             </div>
                         </div>
                     </div>

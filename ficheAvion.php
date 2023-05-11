@@ -52,17 +52,16 @@ $statut = $_GET['statut'];
                                     <td class="col-md-4 small"><?php
                                                                 $aujourdhui = date("Y-m-d");
                                                                 $diff = date_diff(date_create($datePremierVol), date_create($aujourdhui));
-                                                                echo $diff->format('%y,%m' . '&nbsp;ans'); ?>
+                                                                echo $diff->format('%y.%m' . '&nbsp;ans'); ?>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="col-md-3 small">Config sièges&nbsp;:</td>
                                     <td class="col-md-4 small">
-
-                                        <!--<a href="#" data-toggle="tooltip" data-placement="top" title="Première classe"><?php echo "$confF" ?>C12</a><br/>-->
-
-                                        
-                                        <?php echo "$confF" ?> <?php echo "$confC" ?> <?php echo "$confW" ?> <?php echo "$confY" ?>
+                                        <a href="#" data-toggle="tooltip" data-placement="top" title="Première classe"><?php echo $confF ?></a>
+                                        <a href="#" data-toggle="tooltip" data-placement="top" title="Classe affaire"><?php echo $confC ?></a>
+                                        <a href="#" data-toggle="tooltip" data-placement="top" title="Classe économique supérieure"><?php echo $confW ?></a>  
+                                        <a href="#" data-toggle="tooltip" data-placement="top" title="Classe économique"><?php echo $confY ?></a>  
                                     </td>
                                 </tr>
                                 <tr>
