@@ -1,4 +1,6 @@
 <?php
+$file = basename($path, ".php"); 
+//if ($file="ficheAvion") {
 $numeroSerieAvion = $_GET['numeroSerieAvion'];
 $nomAvion = $_GET['nomAvion'];
 $modeleAvion = $_GET['modeleAvion'];
@@ -13,4 +15,8 @@ $confY = $_GET['confY'];
 $hexcode = $_GET['hexcode'];
 $moteur = $_GET['moteur'];
 $statut = $_GET['statut'];
+//} elseif ($file="ficheCompagnie") {
+    //$nomCompagnie = $_GET['nomCompagnie']; 
+    //$immatCompagnie = $_GET['immatCompagnie'];
+//}
 ?>

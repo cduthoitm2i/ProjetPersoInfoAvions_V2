@@ -1,5 +1,6 @@
 <?php
 include_once 'header.php';
+require './includes/setvariablecompagnie.php';
 ?>
 <section>
     <div class="container">
@@ -8,7 +9,7 @@ include_once 'header.php';
             <div class="col">
                 <div class="card mb-5">
                     <div class="card-body">
-                        <h5 class="card-title">NOM COMPAGNIE&nbsp;: <!--<?php echo "$nomCompagnie" ?>--></h5>
+                        <h5 class="card-title">NOM COMPAGNIE&nbsp;: <?php echo "$nomCompagnie" ?></h5>
                         <table class="table table-sm table-borderless">
                             <tbody>
                                 <tr>
