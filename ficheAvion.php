@@ -49,7 +49,7 @@ include './includes/setvariable.php';
                                     <td class="col-md-3 small">Configuration sièges&nbsp;:</td>
                                     <td class="col-md-4 small">
                                         <a href="#" data-toggle="tooltip" data-placement="top" title="Première classe"><?php echo $confF ?></a>
-                                        <a href="#" data-toggle="tooltip" data-placement="top" title="<em>Classe affaire</em>"><?php echo $confC ?></a>
+                                        <a href="#" data-toggle="tooltip" data-placement="top" title="Classe affaire"><?php echo $confC ?></a>
                                         <a href="#" data-toggle="tooltip" data-placement="top" title="Classe économique supérieure"><?php echo $confW ?></a>
                                         <a href="#" data-toggle="tooltip" data-placement="top" title="Classe économique"><?php echo $confY ?></a>
                                     </td>
@@ -60,7 +60,11 @@ include './includes/setvariable.php';
                                 </tr>
                                 <tr>
                                     <td class="col-md-3 small">Motorisation&nbsp;:</td>
-                                    <td class="col-md-4 small"><?php echo "$moteur" ?></td>
+                                    <td class="col-md-4 small"><!--<?php echo "$newmoteur" ?>-->
+                                        <?php
+                                        include './partials/searchreplace.php';
+                                        ?>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td class="col-md-3 small">Statut&nbsp;:</td>
