@@ -5,22 +5,17 @@ include_once 'header.php';
     <div class="container">
         <h1>Liste production Airbus A380</h1>
         <?php
-
-        /* Tests.php */
-
         require_once './lib/Connexion.php';
-        require_once './daos/clientDAOa380.php';
-
+        require_once './daos/clientDAOprod.php';
+        $type= filter_input(INPUT_GET,"type");
         $pdo = seConnecter("./conf/monsite.ini");
 
         // var_dump ($pdo);
 
-        //echo "<hr>Sélection de la base avion<hr>";
+        //echo "Sélection de la base avion";
         $content = "";
         $lines = selectAllPourListeTab($pdo);
-
         $headers = "";
-
 
         // Extraction des autres enregistrements et on affiche dans les balises html
         // On fait le corps du tableau
@@ -55,9 +50,8 @@ include_once 'header.php';
                                                 <td class='small'><?php echo $data['modele_avion']; ?></td>
                                                 <td class='small'><a href="./ficheCompagnie.php"><?php echo $data['nom_compagnie']; ?></a></td>
                                                 <td class='small'>
-                                                    <?php echo $data['date_premier_vol_avion']; ?>
                                                     <?php $timestamp = strtotime($data['date_premier_vol_avion']); 
-                                                        $newdatePremierVol = date("m/d/Y", $timestamp);
+                                                        $newdatePremierVol = date("d-m-Y", $timestamp);
                                                         echo "$newdatePremierVol";?>
                                                 </td>
                                                 <td class='small'><a href="#"><?php echo $data['immatriculation_compagnie_avion']; ?></a></td>
