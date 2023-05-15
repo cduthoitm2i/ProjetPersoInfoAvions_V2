@@ -4,6 +4,22 @@ require_once './entities/Avions.php';
 include './includes/setvariable.php';
 ?>
 <section>
+<?php
+        require_once './lib/Connexion.php';
+        require_once './daos/clientDAOprod.php';
+        $pdo = seConnecter("./conf/monsite.ini");
+        // var_dump ($pdo);
+
+        //echo "Sélection de la base avion";
+        $content = "";
+        $lines = selectAllPourListeTab($pdo);
+        $headers = "";
+        try {
+            //$query = "SELECT * FROM `avion`";
+            // Nouvelle requête SQL faisant le lien avec la table Compagnie
+            $query = "SELECT a.*, c.* FROM avion a INNER JOIN compagnie c ON a.id_compagnie = c.id_compagnie ORDER BY a.id_compagnie"; 
+            $result = $pdo->query($query);
+        ?>
     <div class="container">
         <h1>Fiche avion</h1>
         <div class="row row-cols-1 row-cols-md-2 g-4">
@@ -38,20 +54,22 @@ include './includes/setvariable.php';
                                     <td class="col-md-3 small">Immatriculation essai&nbsp;:</td>
                                     <td class="col-md-4 small"><?php echo "$immatEssai" ?></td>
                                 </tr>
-                                <tr>
-                                    <td class="col-md-3 small">Age de l'avion&nbsp;:</td>
-                                    <td class="col-md-4 small"><?php
-                                                                include './partials/ageavion.php';
-                                                                ?>
-                                    </td>
-                                </tr>
+                                <?php
+                                // On test si l'avion est détruit, car aucune raison de mettre son âge actuel
+                                // Si différent de Scrapped, on affiche bien l'âge
+                                 if ($statut <> "Scrapped" | $statut <> "Written off") {
+                                    echo "<tr><td class='col-md-3 small'>Age de l'avion&nbsp;:</td><td class='col-md-4 small'>";
+                                    include './partials/ageavion.php';
+                                    echo "</td></tr>";
+                                 }
+                                ?>
                                 <tr>
                                     <td class="col-md-3 small">Configuration sièges&nbsp;:</td>
                                     <td class="col-md-4 small">
-                                        <a href="#" data-toggle="tooltip" data-placement="top" title="Première classe"><?php echo $confF ?></a>
-                                        <a href="#" data-toggle="tooltip" data-placement="top" title="Classe affaire"><?php echo $confC ?></a>
-                                        <a href="#" data-toggle="tooltip" data-placement="top" title="Classe économique supérieure"><?php echo $confW ?></a>
-                                        <a href="#" data-toggle="tooltip" data-placement="top" title="Classe économique"><?php echo $confY ?></a>
+                                        <a href="" data-toggle="tooltip" data-placement="top" title="Première classe"><?php echo $confF ?></a>
+                                        <a href="" data-toggle="tooltip" data-placement="top" title="Classe affaire"><?php echo $confC ?></a>
+                                        <a href="" data-toggle="tooltip" data-placement="top" title="Classe économique supérieure"><?php echo $confW ?></a>
+                                        <a href="" data-toggle="tooltip" data-placement="top" title="Classe économique"><?php echo $confY ?></a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -84,7 +102,7 @@ include './includes/setvariable.php';
                             <tbody>
                                 <tr>
                                     <td class="small">Pays&nbsp;:</td>
-                                    <td class="small">drapeau image</td>
+                                    <td class="small"><?php echo 'drapeau_pays'?></td>
                                 </tr>
                                 <tr>
                                     <td class="small">Date&nbsp;:</td>
@@ -108,6 +126,10 @@ include './includes/setvariable.php';
                 </div>
             </div>
         </div>
+        <?php
+                        } catch (PDOException $e) {
+                            echo "Error: " . $e->getMessage();
+                        } ?>
 </section>
 <?php
 include_once 'footer.php';

@@ -15,10 +15,10 @@ include_once 'header.php';
         $lines = selectAllPourListeTab($pdo);
         $headers = "";
         try {
-            $query = "SELECT * FROM `avion`";
+            //$query = "SELECT * FROM `avion`";
+            // Nouvelle requête SQL faisant le lien avec la table Compagnie
+            $query = "SELECT a.*, c.* FROM avion a INNER JOIN compagnie c ON a.id_compagnie = c.id_compagnie ORDER BY a.id_compagnie"; 
             $result = $pdo->query($query);
-            $query2 = "SELECT * FROM `compagnie`";
-            $result2 = $pdo->query($query2);
         ?>
 
             <div class="row py-5">

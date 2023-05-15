@@ -1,22 +1,22 @@
 <?php
 $file = basename($path, ".php"); 
 //if ($file="ficheAvion") {
-$numeroSerieAvion = $_GET['numeroSerieAvion'];
-$nomAvion = $_GET['nomAvion'];
-$modeleAvion = $_GET['modeleAvion'];
-$nomCompagnie = $_GET['nomCompagnie'];
-$datePremierVol = $_GET['datePremierVol'];
-$immatEssai = $_GET['immatEssai'];
-$immatCompagnie = $_GET['immatCompagnie'];
-$confF = $_GET['confF'];
-$confC = $_GET['confC'];
-$confW = $_GET['confW'];
-$confY = $_GET['confY'];
-$hexcode = $_GET['hexcode'];
-$moteur = $_GET['moteur'];
-$statut = $_GET['statut'];
+$numeroSerieAvion = filter_input(INPUT_GET,'numeroSerieAvion');
+$nomAvion = filter_input(INPUT_GET,'nomAvion');
+$modeleAvion = filter_input(INPUT_GET,'modeleAvion');
+$nomCompagnie = filter_input(INPUT_GET,'nomCompagnie');
+$datePremierVol = filter_input(INPUT_GET,'datePremierVol');
+$immatEssai = filter_input(INPUT_GET,'immatEssai');
+$immatCompagnie = filter_input(INPUT_GET,'immatCompagnie');
+$confF = filter_input(INPUT_GET,'confF');
+$confC = filter_input(INPUT_GET,'confC');
+$confW = filter_input(INPUT_GET,'confW');
+$confY = filter_input(INPUT_GET,'confY');
+$hexcode = filter_input(INPUT_GET,'hexcode');
+$moteur = filter_input(INPUT_GET,'moteur');
+$statut = filter_input(INPUT_GET,'statut');
 //} elseif ($file="ficheCompagnie") {
-    //$nomCompagnie = $_GET['nomCompagnie']; 
-    //$immatCompagnie = $_GET['immatCompagnie'];
+    //$nomCompagnie = filter_input(INPUT_GET,'nomCompagnie'); 
+    //$immatCompagnie = filter_input(INPUT_GET,'immatCompagnie');
 //}
 ?>

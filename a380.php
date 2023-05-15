@@ -5,17 +5,22 @@ include_once 'header.php';
     <div class="container">
         <h1>Liste production Airbus A380</h1>
         <?php
+
+        /* Tests.php */
+
         require_once './lib/Connexion.php';
-        require_once './daos/clientDAOprod.php';
-        $type= filter_input(INPUT_GET,"type");
+        require_once './daos/clientDAOa380.php';
+
         $pdo = seConnecter("./conf/monsite.ini");
 
         // var_dump ($pdo);
 
-        //echo "Sélection de la base avion";
+        //echo "<hr>Sélection de la base avion<hr>";
         $content = "";
         $lines = selectAllPourListeTab($pdo);
+
         $headers = "";
+
 
         // Extraction des autres enregistrements et on affiche dans les balises html
         // On fait le corps du tableau

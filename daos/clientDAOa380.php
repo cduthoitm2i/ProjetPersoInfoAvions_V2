@@ -44,7 +44,7 @@ clientDAOa380.php
      * Renvoie un tableau associatif
      */
         try {
-            $sql = "SELECT * FROM avion WHERE modele_avion = ?";
+            $sql = "SELECT * FROM avion WHERE modele_avion = '?'";
             $cursor = $pdo->prepare($sql);
             $cursor->bindValue(1, $id);
             $cursor->execute();
