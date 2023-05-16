@@ -109,23 +109,23 @@ include_once 'header.php';
                 <div class="card mb-5">
                     <div class="card-body">
                         <h5 class="card-title">Compagnies aériennes à la une</h5>
-                        <table class="table table-sm table-striped table-hover table-borderless">
+                        <table class="table table-sm table-hover table-borderless">
 
                             <tbody>
                                 <tr>
-                                    <td style="width:20%"><img src="./images/pas_de_photo.jpg" class="w-25 shadow-1-strong" alt="" /></td>
+                                    <td style="width:20%"><img src="./images/logo_compagnie/Air France.jpg" class="w-100 shadow-1-strong" alt=""/></td>
                                     <td style="width:80%">Air France</td>
                                 </tr>
                                 <tr>
-                                    <td style="width:20%"><img src="./images/pas_de_photo.jpg" class="w-25 shadow-1-strong" alt="" /></td>
+                                    <td style="width:20%"><img src="./images/logo_compagnie/Air Canada.jpg" class="w-100 shadow-1-strong" alt="" /></td>
                                     <td style="width:80%">Air Canada</td>
                                 </tr>
                                 <tr>
-                                    <td style="width:20%"><img src="./images/pas_de_photo.jpg" class="w-25 shadow-1-strong" alt="" /></td>
-                                    <td style="width:80%">Lufthansa</td>
+                                    <td style="width:20%"><img src="./images/logo_compagnie/Delta Air Lines.jpg" class="w-100 shadow-1-strong" alt="" /></td>
+                                    <td style="width:80%">Delta Air Lines</td>
                                 </tr>
                                 <tr>
-                                    <td style="width:20%"><img src="./images/pas_de_photo.jpg" class="w-25 shadow-1-strong" alt="" /></td>
+                                    <td style="width:20%"><img src="./images/logo_compagnie/Emirates.jpg" class="w-100 shadow-1-strong" alt="" /></td>
                                     <td style="width:80%">Emirates</td>
                                 </tr>
                             </tbody>

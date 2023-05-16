@@ -27,7 +27,7 @@ if (isset($_POST['email'], $_POST['sujet'], $_POST['nom'], $_POST['prenom'], $_P
         $message = $_POST['message'];
         // Entête de l'email
         $headers = 'MIME-Version: 1.0' . "\n";
-        $headers .= 'Content-type: text/plain; charset=utf-8' . "\n";
+        $headers .= 'Content-type: text/html; charset=utf-8' . "\n";
         $headers .= 'Content-Transfer-Encoding: 8bit' . "\n";
         $headers = 'From: ' . $from . "\r\n" . 'Reply-To: ' . $_POST['email'] . "\r\n" . 'X-Mailer: PHP/' . phpversion();
         // Essai d'envoi du mail
