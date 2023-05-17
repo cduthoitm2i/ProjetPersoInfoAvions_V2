@@ -29,6 +29,15 @@
             $(table.column(idx).header()).append('<span class="sort-icon"/>');
         });
     });
+    $(document).ready(function() {
+        var table = $('#liste_compagnie').DataTable({
+            "pageLength": 25
+        });
+
+        table.columns().iterator('column', function(ctx, idx) {
+            $(table.column(idx).header()).append('<span class="sort-icon"/>');
+        });
+    });
 </script>
 <script>
 $(document).ready(function(){

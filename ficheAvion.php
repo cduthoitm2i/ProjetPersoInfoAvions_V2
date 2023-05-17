@@ -94,6 +94,7 @@ include './includes/setvariable.php';
                                 </tr>
                             </tbody>
                         </table>
+                        <p><a href="./contact_update_avion.php?numeroSerieAvion=<?php echo $data['numero_serie_avion'] ?>&nomAvion=<?php echo $data['nom_avion']; ?>">Soumettre une mise à jour pour cette avion</a></p>
                     </div>
                 </div>
             </div>
@@ -129,7 +130,8 @@ include './includes/setvariable.php';
                     </div>
                 </div>
             </div>
-        </div>
+
+
         <?php
                         } catch (PDOException $e) {
                             echo "Error: " . $e->getMessage();

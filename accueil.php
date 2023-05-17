@@ -48,7 +48,7 @@ include_once 'header.php';
                                 </tr>
                             </tbody>
                         </table>
-                        <p class="p-2 card-text text-end"><a href="#">Plus de mise à jour vers ce lien</a></p>
+                        <p class="p-2 card-text text-end"><a href="./avion_liste_prod.php">Plus de mise à jour vers ce lien</a></p>
                     </div>
                 </div>
                 <div class="card mb-5">
@@ -64,6 +64,7 @@ include_once 'header.php';
                 <div class="card mb-5">
                     <div class="card-body">
                         <h5 class="card-title">Liste de production</h5>
+                        <p>Sélectionner un modèle d'avion dans la liste ci-dessous&nbsp;:</p>
                         <table class="table table-sm table-borderless">
 
                             <tbody>
@@ -91,7 +92,7 @@ include_once 'header.php';
                                 </tr>
                             </tbody>
                         </table>
-                        <p class="p-2 card-text text-end"><a href="#">Plus de mise à jour vers ce lien</a></p>
+                        <p class="p-2 card-text text-end"><a href="./avion_liste_prod.php">Plus de mise à jour vers ce lien</a></p>
                     </div>
                 </div>
                 <div class="card mb-5">
@@ -108,11 +109,11 @@ include_once 'header.php';
                 </div>
                 <div class="card mb-5">
                     <div class="card-body">
-                        <h5 class="card-title">Compagnies aériennes à la une</h5>
+                        <h5 class="card-title">Compagnies récentes</h5>
                         <table class="table table-sm table-hover table-borderless">
 
                             <tbody>
-                                <tr>
+                                <!--<tr>
                                     <td style="width:20%"><img src="./images/logo_compagnie/Air France.jpg" class="w-100 shadow-1-strong" alt=""/></td>
                                     <td style="width:80%">Air France</td>
                                 </tr>
@@ -127,16 +128,56 @@ include_once 'header.php';
                                 <tr>
                                     <td style="width:20%"><img src="./images/logo_compagnie/Emirates.jpg" class="w-100 shadow-1-strong" alt="" /></td>
                                     <td style="width:80%">Emirates</td>
-                                </tr>
+                                </tr>-->
+                                <?php
+                                require_once './lib/Connexion.php';
+                                require_once './daos/clientDAOprod.php';
+                                $pdo = seConnecter("./conf/monsite.ini");
+                                // var_dump ($pdo);
+
+                                //echo "Sélection de la base avion";
+                                $content = "";
+                                $lines = selectAllPourListeTab($pdo);
+                                $headers = "";
+                                try {
+                                    // On fait une requête SQL sur la totalité de la table mais en évitant les affichages en doublon
+                                    $query = "SELECT DISTINCT * FROM compagnie ORDER BY date_creation_compagnie DESC LIMIT 0,5";
+                                    $result = $pdo->query($query);
+                                ?>
+
+                                    <table id="liste_compagnie" style="width:100%" class="" table table-sm table-hover table-borderless">
+                                        <tbody>
+                                            <?php
+                                            while ($data = $result->fetch(PDO::FETCH_ASSOC)) {
+
+                                            ?>
+                                                <tr>
+                                                    <td class='small' style="vertical-align:middle;width:20%"><a href="https://<?php echo $data['site_web_compagnie'] ?>" target="_blank"><img src="./images/logo_compagnie/<?php echo $data['logo_compagnie'] ?>" style="width:75px" alt="Logo compagnie" /></a></td>
+                                                    <td class='small' style="vertical-align:middle;width:80%"><a href="./ficheCompagnie.php?nomCompagnie=<?php echo $data['nom_compagnie']; ?>"><?php echo $data['nom_compagnie']; ?></a></td>
+                                                </tr>
+
+
+                                            <?php
+                                            }
+                                            ?>
+                                        </tbody>
+                                    </table>
+                                <?php
+                                } catch (PDOException $e) {
+                                    echo "Error: " . $e->getMessage();
+                                } ?>
+
+
                             </tbody>
                         </table>
-                        <p class="p-2 card-text text-end"><a href="#">Plus de mise à jour vers ce lien</a></p>
+                        <p class="p-2 card-text text-end"><a href="./compagnie_liste.php">Plus de mise à jour vers ce lien</a></p>
                     </div>
                 </div>
             </div>
         </div>
 
 </section>
+
 <?php
 include_once 'footer.php';
 ?>

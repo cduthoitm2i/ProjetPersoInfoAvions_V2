@@ -25,7 +25,7 @@ include_once 'header.php';
                     <div class="card rounded shadow border-0">
                         <div class="card-body p-5 bg-white rounded">
                             <div class="table-responsive">
-                                <table id="liste_avion" style="width:100%" class="table table-bordered table-hover dt-responsive">
+                                <table id="liste_compagnie" style="width:100%" class="table table-bordered dt-responsive">
                                     <thead>
                                         <tr>
                                             <th style="text-align:center;vertical-align:middle">Nom compagnie</th>
@@ -59,7 +59,7 @@ include_once 'header.php';
                             echo "Error: " . $e->getMessage();
                         } ?>
                             <br>
-                            <p style="text-align:right"><a href="./impPDF.php">Enregistrer la liste au format PDF</a></p>
+                            <p style="text-align:right"><a href="./impPDFcompagnie.php">Enregistrer la liste au format PDF</a></p>
                             </div>
                         </div>
                     </div>

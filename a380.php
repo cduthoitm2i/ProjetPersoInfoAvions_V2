@@ -78,7 +78,7 @@ include_once 'header.php';
                     </div>
                 </div>
             </div>
-    </div>
+        </div>
     </div>
 </section>
 <?php

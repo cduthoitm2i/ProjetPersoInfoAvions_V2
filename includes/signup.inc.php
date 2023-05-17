@@ -38,7 +38,7 @@ if (isset($_POST["submit"])) {
 		exit();
   }
   // si aucune erreur, on crée l'utilisateur dans la base
-  // insertion dans la base à l'aide de la fonction createUser se trouvant dans functions.inc.php (requête SQL INSERT INTO ...)
+  // insertion dans la base à l'aide de la fonction createUser se trouvant dans le fichier functions.inc.php (requête SQL INSERT INTO ...)
   createUser($conn, $name, $surname, $email, $username, $pwd);
 } else {
 	header("location: ../signup.php");
