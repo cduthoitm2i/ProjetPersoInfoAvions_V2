@@ -26,7 +26,7 @@ include './includes/setvariable.php';
         ?>
     <div class="container">
         <h1>Fiche avion</h1>
-        <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="row row-cols-1 row-cols-md-2 g-4 pt-5">
             <div class="col">
                 <div class="card mb-5">
                     <div class="card-body">
@@ -101,17 +101,16 @@ include './includes/setvariable.php';
             <div class="col">
                 <div class="card mb-5">
                     <div class="card-body">
-                        <h5 class="card-title">Compagnie&nbsp;: <?php echo "$nomCompagnie" ?></h5>
+                        <h5 class="card-title">Compagnie&nbsp;: <?php echo $data['nom_compagnie'] ?> <a href="https://<?php echo $data['site_web_compagnie']?>" target="_blank"><img src="./images/logo_compagnie/<?php echo $data['logo_compagnie']?>" style="width:150px;float:right" alt="Logo compagnie"/></a></h5>
                         <table class="table table-sm table-borderless">
                             <tbody>
                                 <tr>
                                     <td class="small">Pays&nbsp;:</td>
                                     <td class="small"><img src="./images/logo_pays/<?php echo $data['drapeau_pays']?>" style="width:25px" alt="Drapeau"/> <?php echo $data['pays_compagnie']?></td>
-                                    <td rowspan="4"><img src="./images/logo_compagnie/<?php echo $data['logo_compagnie']?>" style="width:150px;float:right" alt="Logo compagnie"/></td>
                                 </tr>
                                 <tr>
                                     <td class="small">Date&nbsp;:</td>
-                                    <td class="small"><?php echo $data['date_creation_compagnie']?> - <?php echo $data['date_fin_compagnie']?></td>
+                                    <td class="small"><?php echo date("Y", strtotime($data['date_creation_compagnie']))?><?php if ($data['statut_compagnie'] === "Active") {} else echo " - " . $data['date_fin_compagnie']?></td>
                                 </tr>
                                 <tr>
                                     <td class="small">Code&nbsp;:</td>

@@ -20,7 +20,7 @@ require './includes/setvariablecompagnie.php';
         ?>
     <div class="container">
         <h1>Fiche compagnie</h1>
-        <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="row row-cols-1 row-cols-md-2 g-4 pt-5">
             <div class="col">
                 <div class="card mb-5">
                     <div class="card-body">
@@ -33,7 +33,7 @@ require './includes/setvariablecompagnie.php';
                                 </tr>
                                 <tr>
                                     <td class="small">Date&nbsp;:</td>
-                                    <td class="small"><?php echo $data['date_creation_compagnie']?> - <?php echo $data['date_fin_compagnie']?></td>
+                                    <td class="small"><?php echo date("Y", strtotime($data['date_creation_compagnie']))?><?php if ($data['statut_compagnie'] === "Active") {} else echo " - " . $data['date_fin_compagnie']?></td>
                                 </tr>
                                 <tr>
                                     <td class="small">Code&nbsp;:</td>
