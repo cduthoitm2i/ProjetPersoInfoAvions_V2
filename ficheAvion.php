@@ -101,7 +101,7 @@ include './includes/setvariable.php';
             <div class="col">
                 <div class="card mb-5">
                     <div class="card-body">
-                        <h5 class="card-title">DERNIER OPÉRATEUR&nbsp;: <?php echo "$nomCompagnie" ?></h5>
+                        <h5 class="card-title">Compagnie&nbsp;: <?php echo "$nomCompagnie" ?></h5>
                         <table class="table table-sm table-borderless">
                             <tbody>
                                 <tr>

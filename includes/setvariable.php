@@ -1,5 +1,5 @@
 <?php
-$file = basename($path, ".php"); 
+//$file = basename($path, ".php"); 
 //if ($file="ficheAvion") {
 $numeroSerieAvion = filter_input(INPUT_GET,'numeroSerieAvion');
 $nomAvion = filter_input(INPUT_GET,'nomAvion');
