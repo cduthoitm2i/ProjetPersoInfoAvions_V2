@@ -1,6 +1,11 @@
 <?php
 include_once 'header.php';
 ?>
+<style>
+  .modal-footer {
+    border-top: 0px;
+  }
+</style>
 <section class="signup-form">
   <div class="container signup-form-form">
     <div class="row">
@@ -43,6 +48,7 @@ include_once 'header.php';
                 } ?>
               </label>
             </form>
+            <p><a href="./controllers/MotdePasseCTRLEtape1.php" data-target="#exampleModal" data-toggle="modal">Mot de passe oublié</a></p>
           </div>
         </div>
       </div>
