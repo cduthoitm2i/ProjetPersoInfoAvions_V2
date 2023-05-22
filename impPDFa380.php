@@ -1,5 +1,5 @@
 <?php
-	// --- impPDF.php
+	// --- impPDFa380.php
 	header("Content-Type: application/pdf;charset=UTF-8");
 
 	// --- La bibliothèque
@@ -34,7 +34,7 @@
       // --- pour afficher plus bas les caractères accentués
       $pdo->exec("SET NAMES 'UTF8'");
 
-      $sql = "SELECT numero_serie_avion, modele_avion, nom_compagnie, date_premier_vol_avion, immatriculation_compagnie_avion, statut_avion FROM `avion` WHERE nom_avion = 'A380'";
+      $sql = "SELECT numero_serie_avion, modele_avion, nom_compagnie, date_premier_vol_avion, immatriculation_compagnie_avion, statut_avion FROM avion WHERE nom_avion = 'A380'";
       $curseur = $pdo->query($sql);
       // Pour mettre en gras le texte de la tétière
       $pdf->SetFont('Arial','B',12);

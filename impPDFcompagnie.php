@@ -1,4 +1,5 @@
 <?php
+   ob_end_clean();
 	// --- impPDF.php
 	header("Content-Type: application/pdf;charset=UTF-8");
 
