@@ -1,3 +1,4 @@
 <?php
-$nomCompagnie = $_GET['nomCompagnie']; 
+$nomCompagnie = $_GET['nomCompagnie'];
+//$paysCompagnie = $_GET['paysCompagnie'];
 ?>

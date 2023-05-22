@@ -1,5 +1,6 @@
 <?php
 include_once 'header.php';
+include './includes/setvariable.php';
 ?>
 <section>
     <div class="container">

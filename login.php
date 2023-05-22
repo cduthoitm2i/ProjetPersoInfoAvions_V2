@@ -48,7 +48,29 @@ include_once 'header.php';
                 } ?>
               </label>
             </form>
-            <p><a href="./controllers/MotdePasseCTRLEtape1.php" data-target="#exampleModal" data-toggle="modal">Mot de passe oublié</a></p>
+            <p><a href="#" data-target="#exampleModal" data-toggle="modal">Mot de passe oublié</a></p>
+            <!--modal-->
+            <div class="modal top fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-mdb-backdrop="true" data-mdb-keyboard="true">
+              <div class="modal-dialog" style="width: 400px;">
+                <div class="modal-content text-center">
+                  <div class="modal-header h5 justify-content-center" style="background-color: #e3f2fd;">J'ai oublié mon mot de passe</div>
+                  <div class="modal-body px-5">
+                    <p class="py-2">Renseigner votre adresse mail. </p>
+                    <form action="./controllers/MotdePasseCTRL.php" method="POST">
+                      <div class="form-outline">
+                        <input type="email" id="typeEmail" class="form-control my-3" value="cduthoit@live.fr" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
+                        <label class="form-label" for="typeEmail"><strong>Saisir votre adresse mail&nbsp;:</strong></label>
+                        <button type="submit" class="btn w-100" style="background-color: #e3f2fd;">Envoyer un nouveau mot de passe</button>
+                      </div>
+                    </form>
+                    <div class="d-flex justify-content-between mt-4">
+                      <a class="" href="./login.php">Login</a>
+                      <a class="" href="./signup.php">Register</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

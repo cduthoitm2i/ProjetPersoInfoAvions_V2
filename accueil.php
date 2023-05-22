@@ -54,7 +54,7 @@ include_once 'header.php';
                 <div class="card mb-5">
                     <div class="card-body">
                         <h5 class="card-title">Photos récentes</h5>
-                        <div id="randpic" style="width: 450px;"></div>
+                        <div id="randpic" class="rounded img-fluid"></div>
                         <!--<img src="./images/photos/image1.png" width="450px" class="img-fluid start" alt="...">-->
                     </div>
                 </div>
@@ -145,7 +145,7 @@ include_once 'header.php';
                                     $result = $pdo->query($query);
                                 ?>
 
-                                    <table id="liste_compagnie" style="width:100%" class="" table table-sm table-hover table-borderless">
+                                    <table id="liste_compagnie" style="width:100%" class="table table-sm table-hover table-borderless">
                                         <tbody>
                                             <?php
                                             while ($data = $result->fetch(PDO::FETCH_ASSOC)) {

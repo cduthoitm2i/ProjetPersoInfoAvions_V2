@@ -91,13 +91,6 @@
           <li class="nav-item">
             <a class="nav-link" href="./photo.php">Photographie</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Aéroport</a>
-            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
-              <li><a class="dropdown-item" href="./aeroport_recherche.php">Rechercher un aéroport</a></li>
-              <li><a class="dropdown-item" href="./aeroport_par_pays.php">Liste des aéroports par pays</a></li>
-            </ul>
-          </li>
           <li class="nav-item">
             <a class="nav-link" href="./contact.php">Contact</a>
           </li>
