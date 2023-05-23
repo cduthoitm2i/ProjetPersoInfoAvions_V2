@@ -3,8 +3,9 @@
 
     declare(strict_types = 1);
     
-    class Avions {
+    class Avion {
         private int $idAvion;
+        private string $nomAvion;
         private string $numeroSerieAvion;
         private string $modeleAvion;
         private string $nomCompagnie;
@@ -18,6 +19,7 @@
         // Méthode avec 7 paramètres initialisés qui ont des valeurs par défaut (et donc facultatif)
         public function __construct(int $idAvion = 0, string $numeroSerieAvion = "", string $modeleAvion= "", string $nomCompagnie= "", string $datePremierVol= "", string $immatriculationCompagnie= "", string $statut= "") {
             $this->idAvion = $idAvion;
+            $this->nomAvion = $nomAvion;
             $this->numeroSerieAvion = $numeroSerieAvion;
             $this->modeleAvion = $modeleAvion;
             $this->nomCompagnie = $nomCompagnie;
@@ -28,6 +30,9 @@
         // Autres méthodes
         public function setIdAvion(int $idAvion) : void { $this->idAvion = $idAvion; }
         public function getIdAvion() : int { return $this->idAvion; }
+
+        public function setNomAvion(string $nomAvion) : void { $this->nomAvion = $nomAvion; }
+        public function getNomAvion() : string { return $this->nomAvion; }
 
         public function setNumeroSerieAvion(string $numeroSerieAvion) : void { $this->numeroSerieAvion = $numeroSerieAvion; }
         public function getNumeroSerieAvion() : string { return $this->numeroSerieAvion; }

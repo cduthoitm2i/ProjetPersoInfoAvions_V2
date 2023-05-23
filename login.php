@@ -58,9 +58,8 @@ include_once 'header.php';
                     <p class="py-2">Renseigner votre adresse mail. </p>
                     <form action="./controllers/MotdePasseCTRL.php" method="POST">
                       <div class="form-outline">
-                        <input type="email" id="typeEmail" class="form-control my-3" value="cduthoit@live.fr" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
-                        <label class="form-label" for="typeEmail"><strong>Saisir votre adresse mail&nbsp;:</strong></label>
-                        <button type="submit" class="btn w-100" style="background-color: #e3f2fd;">Envoyer un nouveau mot de passe</button>
+                        <input type="email" id="email" name="email" class="form-control my-3" value="cduthoit@live.fr" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
+                        <button type="submit" name="btEnvoyerEmail" class="btn w-100" style="background-color: #e3f2fd;">Envoyer un nouveau mot de passe</button>
                       </div>
                     </form>
                     <div class="d-flex justify-content-between mt-4">

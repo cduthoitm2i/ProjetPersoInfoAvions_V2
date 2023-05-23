@@ -1,5 +1,11 @@
 <?php
   session_start();
+  ob_start();
+  ob_end_clean();
+  ob_get_contents();
+  ob_end_clean();
+?>
+<?php
   include_once 'includes/functions.inc.php';
 ?>
 <!DOCTYPE html>

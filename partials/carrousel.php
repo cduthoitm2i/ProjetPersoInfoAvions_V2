@@ -8,8 +8,8 @@ if ($file_count > 0) {
         $ext_array = ['png', 'jpg', 'jpeg', 'gif'];
         if (in_array($ext, $ext_array)) {
             $file_path = $path . $file; ?>
-            <div class="col-md-4 col-xs-6 mb-2">
-                <a href="<?php echo $file_path; ?>" title="Dernières photos publiées" data-gallery><img src="<?php echo $file_path; ?>" class="rounded img-fluid" /></a>
+            <div class="col-md-4 col-xs-6 mb-2 p-1">
+                <a href="<?php echo $file_path; ?>" title="Dernières photos publiées" data-gallery><img src="<?php echo $file_path; ?>" class="rounded img-fluid h-100" /></a>
             </div>
 <?php }
     }

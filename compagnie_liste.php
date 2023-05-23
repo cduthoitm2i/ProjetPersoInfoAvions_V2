@@ -19,7 +19,6 @@ include_once 'header.php';
             $query = "SELECT DISTINCT * FROM compagnie";
             $result = $pdo->query($query);
         ?>
-
             <div class="row py-5">
                 <div class="col-lg-12 mx-auto">
                     <div class="card rounded shadow border-0">
@@ -38,18 +37,15 @@ include_once 'header.php';
                                     <tbody>
                                         <?php
                                         while ($data = $result->fetch(PDO::FETCH_ASSOC)) {
-
                                         ?>
                                              <tr>
-                                                <!--<td class='small' style="vertical-align:middle"><a href="./ficheCompagnie.php?nomCompagnie=<?php echo $data['nom_compagnie']; ?>?paysCompagnie=<?php echo $data['pays_compagnie']; ?>"><?php echo $data['nom_compagnie']; ?></a></td>-->
-                                                <td class='small' style="vertical-align:middle"><a href="./ficheCompagnie.php?nomCompagnie=<?php echo $data['nom_compagnie']; ?>"><?php echo $data['nom_compagnie']; ?></a></td>
+                                                <td class='small' style="vertical-align:middle"><a href="./ficheCompagnie.php?nomCompagnie=<?php echo $data['nom_compagnie']; ?>&paysCompagnie=<?php echo $data['pays_compagnie']; ?>"><?php echo $data['nom_compagnie']; ?></a></td>
+                                                <!--<td class='small' style="vertical-align:middle"><a href="./ficheCompagnie.php?nomCompagnie=<?php echo $data['nom_compagnie']; ?>"><?php echo $data['nom_compagnie']; ?></a></td>-->
                                                 <td class='small' style="vertical-align:middle"><img src="./images/logo_pays/<?php echo $data['drapeau_pays']?>" style="width:25px" alt="Drapeau"/> <?php echo $data['pays_compagnie']?></td>
                                                 <td class='small' style="text-align:center;vertical-align:middle"><a href="https://<?php echo $data['site_web_compagnie']?>" target="_blank"><img src="./images/logo_compagnie/<?php echo $data['logo_compagnie']?>" style="width:100px" alt="Logo compagnie"/></a></td>
                                                 <td class='small' style="vertical-align:middle"><a href="https://<?php echo $data['site_web_compagnie']?>" target="_blank"><?php echo $data['site_web_compagnie']?></a></td>
                                                 <td class='small' style="vertical-align:middle"><?php echo $data['statut_compagnie']; ?></td>
                                             </tr>
-                                            
-                                            
                                         <?php
                                         }
                                         ?>
