@@ -76,14 +76,14 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Avion</a>
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
-            <li><a class="dropdown-item" href="./avion_recherche.php">Rechercher un avion</a></li>
+            <!--<li><a class="dropdown-item" href="./avion_recherche.php">Rechercher un avion</a></li>-->
             <li><a class="dropdown-item" href="./avion_liste_prod.php">Liste de production</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Compagnie</a>
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
-            <li><a class="dropdown-item" href="./compagnie_recherche.php">Rechercher une compagnie</a></li>
+            <!--<li><a class="dropdown-item" href="./compagnie_recherche.php">Rechercher une compagnie</a></li>-->
             <li><a class="dropdown-item" href="./compagnie_liste.php">Liste des compagnies</a></li>
             <li><a class="dropdown-item" href="./compagnie_liste_par_pays.php">Liste par pays</a></li>
           </ul>

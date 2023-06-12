@@ -66,9 +66,9 @@ try {
     ?>
     <section>
         <div class="container">
-            <p>Pour transmettre des informations, merci de renseigner les informations ci-dessous (par exemple, indiquer des informations erronées, un nouvel opérateur, une nouvelle immatriculation, une nouvelle date de livraison, etc.) <br />Si les informations ne sont pas suffisamment précises, votre correction ne sera pas prise en compte. Ce formulaire ne concerne que l'avion <strong><?php echo "$nomAvion" ?></strong>, MSN <strong><?php echo "$numeroSerieAvion" ?></strong>.</p>
             <div class="row">
                 <div class="col-sm-9 col-md-7 col-lg-7 mx-auto">
+                    <p>Pour transmettre des informations, merci de renseigner les informations ci-dessous (par exemple, indiquer des informations erronées, un nouvel opérateur, une nouvelle immatriculation, une nouvelle date de livraison, etc.) <br />Si les informations ne sont pas suffisamment précises, votre correction ne sera pas prise en compte. Ce formulaire ne concerne que l'avion <strong><?php echo "$nomAvion" ?></strong>, MSN <strong><?php echo "$numeroSerieAvion" ?></strong>.</p>
                     <div class="well well-sm card border-0 shadow rounded-3 my-5 p-4 p-sm-5">
                         <form class="form-horizontal" action="" method="post">
                             <fieldset>

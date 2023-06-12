@@ -18,7 +18,7 @@ http://localhost/PDOCours/AuthentificationAvecJeton/AuthentificationAvecJetonVie
             <input type="submit" />
         </form>
         <?php
-        setcookie("jeton_authentification", "abc", time() + (3600 * 24 * 14));
+        setcookie("jeton_authentification", "yyy", time() + (3600 * 24 * 14));
         $message = "";
         $usersUiD = filter_input(INPUT_POST, "usersUiD");
         $usersPwd = filter_input(INPUT_POST, "usersPwd");
