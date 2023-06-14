@@ -16,18 +16,18 @@ include_once 'header.php';
             <form action="includes/login.inc.php" method="post">
               <div class="form-floating mb-3">
                 <!-- Modifier en type text car ce n'est pas sécurisé pour le login, on préférera pour une inscription -->
-                <input type="text" id="uid" class="form-control" placeholder="Identifiant" name="uid" aria-describedby="IdentifiantAide" value="Pseudo10" />
+                <input type="text" id="uid" class="form-control" placeholder="Identifiant" name="uid" aria-describedby="IdentifiantAide" value="" />
                 <label class="form-label" for="uid">Pseudo&nbsp;:</label>
                 <small id="IdentifiantAide" class="form-text text-muted">Saisir votre identifiant</small>
               </div>
               <div class="form-floating mb-3">
-                <input type="password" id="pwd" class="form-control" placeholder="Mot de passe" autocomplete="on" name="pwd" aria-describedby="mdpAide" value="canada" />
+                <input type="password" id="pwd" class="form-control" placeholder="Mot de passe" autocomplete="on" name="pwd" aria-describedby="mdpAide" value="" />
                 <label class="form-label" for="pwd">Mot de passe&nbsp;:</label>
                 <small id="mdpAide" class="form-text text-muted">Saisir votre mot de passe</small>
               </div>
               <div class="form-check mb-3">
                 <input class="form-check-input" type="checkbox" value="" id="rememberPasswordCheck" name="rememberPasswordCheck">
-                <label class="form-check-label" for="rememberPasswordCheck">Mot de passe visible</label>
+                <label class="form-check-label" id="labelcheckbox" for="rememberPasswordCheck">Afficher le mot de passe</label>
               </div>
               <div class="form-check mb-3">
                 <input class="form-check-input" type="checkbox" value="" id="chkSeSouvenir" name="chkSeSouvenir">
@@ -76,6 +76,7 @@ include_once 'header.php';
     </div>
   </div>
 </section>
+<script src="js/login.js"></script>
 <?php
 include_once 'footer.php';
 ?>

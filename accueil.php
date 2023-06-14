@@ -177,7 +177,7 @@ include_once 'header.php';
         </div>
 
 </section>
-
+<script src="./js/random.js"></script>
 <?php
 include_once 'footer.php';
 ?>

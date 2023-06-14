@@ -30,7 +30,7 @@
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.css" />
   <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.js"></script>
   <script src="https://kit.fontawesome.com/0005c4531c.js" crossorigin="anonymous"></script>
-  <script src="./js/random.js"></script>
+
 
   <!-- Mon favicon -->
   <link rel="apple-touch-icon-precomposed" sizes="57x57" href="./images/png/apple-touch-icon-57x57.png" />
