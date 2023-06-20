@@ -1,39 +1,27 @@
-function randomImage() {
-  var fileNames = [
-    "./images/photos/image1.webp",
-    "./images/photos/image2.webp",
-    "./images/photos/image3.webp",
-    "./images/photos/image4.webp",
-    "./images/photos/image5.webp",
-    "./images/photos/image6.webp",
-    "./images/photos/image7.webp",
-    "./images/photos/image8.webp",
-    "./images/photos/image9.webp",
-    "./images/photos/image10.webp",   
-    "./images/photos/image11.webp",
-    "./images/photos/image12.webp",
-    "./images/photos/image13.webp",
-    "./images/photos/image14.webp",
-    "./images/photos/image15.webp",
-    "./images/photos/image16.webp",
-    "./images/photos/image17.webp",
-    "./images/photos/image18.webp",
-    "./images/photos/image19.webp",
-    "./images/photos/image20.webp",  
-  
-  ];
-  var randomIndex = Math.floor(Math.random() * fileNames.length);
-  document.getElementById("randpic").style.content = 'url(' + fileNames[randomIndex] + ')';  
-}
-
-function getRandomTime() {
-        return 5000;
-    // return Math.round(Math.random() * 5000);
-}
-
-(function loop() {
-    setTimeout(function() {
-      randomImage();
-    loop();
-  }, getRandomTime())
-})();
+function init(nImages) {
+  for (let i = 1; i < nImages; i++) {
+      tImages[i] = new Image()
+      tImages[i].src = "./images/photos/image" + i + ".webp"
+  }
+  i = 1
+  window.setInterval(changerImage, 2000)
+} /// init
+/**
+*
+* @returns {undefined}
+*/
+function changerImage() {
+  photo.src = tImages[i].src
+  photo.alt = "Image : " + i + ".webp"
+  i++
+  if (i === tImages.length) {
+      i = 1
+  }
+} /// changerImage
+/*
+* MAIN
+*/
+var photo = document.getElementById("photo")
+var i
+var tImages = new Array()
+window.onload = init(20)

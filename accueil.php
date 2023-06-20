@@ -54,8 +54,11 @@ include_once 'header.php';
                 <div class="card mb-5">
                     <div class="card-body">
                         <h5 class="card-title">Photos récentes</h5>
-                        <div id="randpic" class="rounded img-fluid"></div>
-                        <!--<img src="./images/photos/image1.png" width="450px" class="img-fluid start" alt="...">-->
+                        <!--<div id="randpic" class="rounded img-fluid"></div>-->
+                        <!--<img src="./images/photos/image1.webp" width="450px" class="img-fluid start" alt="...">-->
+                        <div>
+                            <img id="photo" src="./images/photos/image1.webp" alt="Image" width="400px" />
+                        </div>
                     </div>
                 </div>
 
