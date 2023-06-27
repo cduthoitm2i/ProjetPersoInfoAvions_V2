@@ -1,5 +1,5 @@
 /*
- * Authentification.js
+ * authentification.js
  */
 function init() {
   document.getElementById("btSubmit").addEventListener(

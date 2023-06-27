@@ -8,23 +8,23 @@ include_once 'header.php';
         <div class="card border-0 shadow rounded-3 my-5">
           <div class="card-body p-4 p-sm-5">
             <h5 class="card-title text-center mb-5 fw-light fs-4">Création d'un compte utilisateur</h5>
-            <form action="includes/signup.inc.php" method="post">
+            <form action="includes/signup.inc.php" method="post" id="formulaireAuthentification">
               <p><span class="error">* champs requis</span></p>
               <div class="form-floating mb-3">
                 <input class="form-control" id="name" type="text" placeholder="Nom" aria-label="Nom" value="Duthoit" name="name">
-                <label for="name" class="col-sm-2 col-form-label">Nom</label>
+                <label for="name" class="col-sm-4 col-form-label">Nom</label>
               </div>
               <div class="form-floating mb-3">
                 <input class="form-control" id="surname" type="text" placeholder="Prénom" aria-label="Prenom" name="surname" value="Christophe">
-                <label for="surname" class="col-sm-2 col-form-label">Prénom</label>
+                <label for="surname" class="col-sm-4 col-form-label">Prénom</label>
               </div>
               <div class="form-floating mb-3">
                 <input type="email" class="form-control" id="email" placeholder="E-mail" name="email" value="toto@toto.com">
-                <label class="col-sm-2 col-form-label" for="email">E-mail</label>
+                <label class="col-sm-4 col-form-label" for="email">E-mail</label>
               </div>
               <div class="form-floating mb-3">
                 <!-- Modifier en type text car ce n'est pas sécurisé pour le login, on préférera pour une inscription -->
-                <input type="text" id="uid" class="form-control" placeholder="Identifiant" name="uid" maxlength="20" pattern="[a-zA-Z0-9-_.]{1,20}" value="Pseudo10">
+                <input type="text" id="uid" class="form-control" placeholder="Identifiant" name="uid" maxlength="20" pattern="^[a-zA-Z0-9]{1,20}$" value="Pseudo10">
                 <label class="form-label" for="uid">Pseudo&nbsp;:</label>
               </div>
               <div class="form-floating mb-3">
@@ -38,19 +38,19 @@ include_once 'header.php';
               </div>
               <div class="form-check mb-3">
                 <input class="form-check-input" type="checkbox" value="" id="rememberPasswordCheck">
-                <label class="form-check-label" for="rememberPasswordCheck">Mot de passe visible</label>
+                <label class="form-check-label" for="rememberPasswordCheck" id="labelcheckbox">Mot de passe visible</label>
               </div>
               <div class="form-check mb-3">
                 <input class="form-check-input" type="checkbox" value="" id="newsletter">
                 <label class="form-check-label" for="newsletter">Cocher si vous souhaitez obtenir la newsletter&thinsp;?</label>
               </div>
               <div class="d-grid">
-                <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Créer le compte</button>
+                <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit" name="btSubmit" id="btSubmit">Créer le compte</button>
               </div>
               <label>
                 <?php
                 // Messages d'erreur
-                if (isset($_GET["error"])) {
+                /*if (isset($_GET["error"])) {
                   if ($_GET["error"] == "emptyinput") {
                     echo '<div class="alert alert-danger" role="alert">Remplir tous les champs&nbsp;!</div>';
                   } else if ($_GET["error"] == "invaliduid") {
@@ -66,15 +66,21 @@ include_once 'header.php';
                   } else if ($_GET["error"] == "none") {
                     echo '<div class="alert alert-success" role="alert">Vous êtes enregistré&nbsp;!</div>';
                   }
-                }
+                }*/
                 ?></label>
+              <label id="lblMessage">
+
+              </label>
             </form>
+
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+<script src="./js/login.js"></script>
+<script src="./js/inscription.js"></script>
 <?php
 include_once 'footer.php';
 ?>

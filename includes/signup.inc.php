@@ -1,5 +1,5 @@
 <?php
-if (isset($_POST["submit"])) {
+if (isset($_POST["BtSubmit"])) {
   // On récupère les informations du fichier signup.php via la bouton type submit
   $name = $_POST["name"];
   $surname = $_POST["surname"];
@@ -9,8 +9,8 @@ if (isset($_POST["submit"])) {
   $pwdRepeat = $_POST["pwdrepeat"];
 
   // on fait le lien vers les fonctions de contôle et la connexion à la base
-  require_once "dbh.inc.php";
-  require_once 'functions.inc.php';
+  require_once "./dbh.inc.php";
+  require_once "./functions.inc.php";
 
   // On test les champs restés vide
   if (emptyInputSignup($name, $surname, $email, $username, $pwd, $pwdRepeat) !== false) {
