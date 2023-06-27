@@ -6,6 +6,7 @@
 
  document.getElementById("rememberPasswordCheck").onclick = voirmdp
 
+
  checkbox=true
  function voirmdp(){
      if(checkbox){

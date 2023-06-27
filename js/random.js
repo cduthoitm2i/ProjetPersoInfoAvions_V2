@@ -4,7 +4,7 @@ function init(nImages) {
       tImages[i].src = "./images/photos/image" + i + ".webp"
   }
   i = 1
-  window.setInterval(changerImage, 2000)
+  window.setInterval(changerImage, 3000)
 } /// init
 /**
 *

@@ -57,7 +57,7 @@ include_once 'header.php';
                         <!--<div id="randpic" class="rounded img-fluid"></div>-->
                         <!--<img src="./images/photos/image1.webp" width="450px" class="img-fluid start" alt="...">-->
                         <div>
-                            <img id="photo" src="./images/photos/image1.webp" alt="Image" width="400px" />
+                            <img id="photo" src="./images/photos/image1.webp" alt="Image" width="460px" />
                         </div>
                     </div>
                 </div>

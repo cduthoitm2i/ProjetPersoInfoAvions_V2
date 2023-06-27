@@ -13,7 +13,7 @@ include_once 'header.php';
         <div class="card border-0 shadow rounded-3 my-5">
           <div class="card-body p-4 p-sm-5">
             <h5 class="card-title text-center mb-5 fw-light fs-4">Authentification</h5>
-            <form action="includes/login.inc.php" method="post">
+            <form action="includes/login.inc.php" method="post" id="formulaireAuthentification">
               <div class="form-floating mb-3">
                 <!-- Modifier en type text car ce n'est pas sécurisé pour le login, on préférera pour une inscription -->
                 <input type="text" id="uid" class="form-control" placeholder="Identifiant" name="uid" aria-describedby="IdentifiantAide" value="" />
@@ -34,19 +34,23 @@ include_once 'header.php';
                 <label class="form-check-label" for="chkSeSouvenir">Se souvenir de moi</label>
               </div>
               <div class="d-grid">
-                <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit" name="submit">Connexion</button>
+                <!--<input class="btn btn-primary btn-login text-uppercase fw-bold" type="submit" name="BtSubmit" id="btSubmit" value="Connexion">-->
+                <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit" name="submit" id="btSubmit">Connexion</button>
               </div>
               <label>
                 <?php
                 // Messages d'erreur
                 if (isset($_GET["error"])) {
                   if ($_GET["error"] == "emptyinput") {
-                    echo "<div class='alert alert-danger' role='alert'>Renseigner tous les champs&nbsp;!</div>";
+                    echo "<div class='d-grid alert alert-danger' role='alert'>Renseigner tous les champs&nbsp;!</div>";
                   } else if ($_GET["error"] == "wronglogin") {
-                    echo "<div class='alert alert-danger' role='alert'>Mauvais login&nbsp;!</div>";
+                    echo "<div class='d-grid alert alert-danger' role='alert'>Mauvais login&nbsp;!</div>";
                   }
-                } ?>
+                }
+                 ?>
+
               </label>
+              <label id="lblMessage"></label>
             </form>
             <p><a href="#" data-target="#exampleModal" data-toggle="modal">Mot de passe oublié</a></p>
             <!--modal-->
@@ -76,7 +80,8 @@ include_once 'header.php';
     </div>
   </div>
 </section>
-<script src="js/login.js"></script>
+<script src="./js/login.js"></script>
+<!--<script src="./js/authentification.js"></script>-->
 <?php
 include_once 'footer.php';
 ?>
