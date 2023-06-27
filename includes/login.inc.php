@@ -1,6 +1,6 @@
 <?php
 
-if (isset($_POST["submit"])) {
+if (isset($_POST["btSubmit"])) {
 
   // on récupère les informations des champs de saisie
   $username = $_POST["uid"];

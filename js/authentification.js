@@ -17,12 +17,8 @@ function valider() {
   if (uid.trim() === "" || pwd.trim() === "") {
     document.getElementById("lblMessage").innerHTML =
       "<br/><div class='d-grid alert alert-danger' role='alert'>Renseigner tous les champs&nbsp;!!!!</div>";
-      header("location: ../login.php?error=emptyinput");
-      exit();
   } else {
-    document.getElementById("formulaireAuthentification").submit()
-    header("location: ../login.php");
-    exit();
+    document.getElementById("formulaireAuthentification").submit();
   }
 }
 window.onload = init;

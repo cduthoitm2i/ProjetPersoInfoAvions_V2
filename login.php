@@ -34,17 +34,16 @@ include_once 'header.php';
                 <label class="form-check-label" for="chkSeSouvenir">Se souvenir de moi</label>
               </div>
               <div class="d-grid">
-                <!--<input class="btn btn-primary btn-login text-uppercase fw-bold" type="submit" name="BtSubmit" id="btSubmit" value="Connexion">-->
-                <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit" name="submit" id="btSubmit">Connexion</button>
+                <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit" name="btSubmit" id="btSubmit">Connexion</button>
               </div>
               <label>
                 <?php
                 // Messages d'erreur
                 if (isset($_GET["error"])) {
                   if ($_GET["error"] == "emptyinput") {
-                    echo "<div class='d-grid alert alert-danger' role='alert'>Renseigner tous les champs&nbsp;!</div>";
+                    echo "<br/><div class='d-grid alert alert-danger' role='alert'>Renseigner tous les champs&nbsp;!</div>";
                   } else if ($_GET["error"] == "wronglogin") {
-                    echo "<div class='d-grid alert alert-danger' role='alert'>Mauvais login&nbsp;!</div>";
+                    echo "<br/><div class='d-grid alert alert-danger' role='alert'>Mauvais login&nbsp;!</div>";
                   }
                 }
                  ?>
