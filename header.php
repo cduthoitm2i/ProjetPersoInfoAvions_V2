@@ -4,7 +4,6 @@
 ?>
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
   <meta charset="utf-8">
   <title>Mon projet Info Avions Airbus</title>
@@ -57,7 +56,6 @@
 </head>
 
 <body>
-
   <!-- Ma navbar Bootstrap 5-->
   <!-- ajout du style background-color: #e3f2fd;" dans la balise nav de départ pour faire un bleu pale -->
   <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #e3f2fd;">
@@ -65,7 +63,6 @@
       <a class="navbar-brand" href="./accueil.php">
         <img src="./icones/Logo_Airbus_2014.svg" alt="Mon logo" width="200">
       </a>
-
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>

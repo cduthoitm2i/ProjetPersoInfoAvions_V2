@@ -26,30 +26,45 @@ try {
     // Variable pour message de fin
     $responses = [];
     // Vérification si on récupère bien les informations des champs
-    if (isset($_POST['email'], $_POST['sujet'], $_POST['nom'], $_POST['prenom'], $_POST['message'])) {
+    $email = filter_input(INPUT_POST, "email");
+    $sujet = filter_input(INPUT_POST, "sujet");
+    $nom = filter_input(INPUT_POST, "nom");
+    $prenom = filter_input(INPUT_POST, "prenom");
+    $message = filter_input(INPUT_POST, "message");
+    // Ancienne syntaxe
+    // if (isset($_POST['email'], $_POST['sujet'], $_POST['nom'], $_POST['prenom'], $_POST['message'])) {
+    if (isset($email, $sujet, $nom, $prenom, $message)) {
+
         // Validation de l'adresse mail
         if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-            $responses[] = 'Adresse mail pas valide&nbsp;!';
+            $responses[] = 'Adresse mail pas valide&nbsp;!<br/>';
         }
         // Vérification si les champs sont remplis
-        if (empty($_POST['email']) || empty($_POST['sujet']) || empty($_POST['nom']) || empty($_POST['prenom']) || empty($_POST['message'])) {
+        // Ancienne syntaxe
+        //if (empty($_POST['email']) || empty($_POST['sujet']) || empty($_POST['nom']) || empty($_POST['prenom']) || empty($_POST['message'])) {
+        if (empty($email) || empty($sujet) || empty($nom) || empty($prenom) || empty($message)) {
             $responses[] = 'Merci de renseigner tous les champs&nbsp;!';
         }
         // si pas d'erreurs, on peut envoyer le mail
         if (!$responses) {
-            // A qui envoyé un mail
+            // A qui envoyé un mail ?
             $to = 'cduthoit@live.fr';
             // Mail à renseigner pour la réponse&nbsp;?
+            // Ancienne syntaxe
             //$from = 'cduthoit@gmail.com';
             $from = filter_input(INPUT_POST, "email");
             // Sujet du mail
-            $sujet = $_POST['sujet'];
+            // Ancienne syntaxe
+            //$sujet = $_POST['sujet'];
+            $sujet = filter_input(INPUT_POST, "sujet");
             // Message du mail
-            $message = $_POST['message'];
+            // Ancienne syntaxe
+            //$message = $_POST['message'];
+            $message = filter_input(INPUT_POST, "message");
             // Entête de l'email
-            $headers = 'MIME-Version: 1.0' . "\n";
-            $headers .= 'Content-type: text/html; charset=utf-8' . "\n";
-            $headers .= 'Content-Transfer-Encoding: 8bit' . "\n";
+            $headers = 'MIME-Version: 1.0' . "\r\n";
+            $headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
+            $headers .= 'Content-Transfer-Encoding: 8bit' . "\r\n";
             $headers = 'From: ' . $from . "\r\n" . 'Reply-To: ' . $_POST['email'] . "\r\n" . 'X-Mailer: PHP/' . phpversion();
             // Essai d'envoi du mail
             if (mail($to, $sujet, $message, $headers)) {
