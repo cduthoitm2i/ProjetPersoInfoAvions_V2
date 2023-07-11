@@ -8,8 +8,9 @@ include_once 'header.php';
         <div class="card border-0 shadow rounded-3 my-5">
           <div class="card-body p-4 p-sm-5">
             <h5 class="card-title text-center mb-5 fw-light fs-4">Création d'un compte utilisateur</h5>
-            <form action="includes/signup.inc.php" method="post" id="formulaireAuthentification">
-              <p><span class="error">* champs requis</span></p>
+            <!--<form action="includes/signup.inc.php" method="post" id="formulaireAuthentification">-->
+            <form action="" method="post" id="formulaireAuthentification">
+              <!--<p><span class="error">* champs requis</span></p>-->
               <div class="form-floating mb-3">
                 <input class="form-control" id="name" type="text" placeholder="Nom" aria-label="Nom" value="Duthoit" name="name">
                 <label for="name" class="col-sm-4 col-form-label">Nom</label>
