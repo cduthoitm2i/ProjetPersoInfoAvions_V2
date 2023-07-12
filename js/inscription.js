@@ -18,7 +18,7 @@ function valider() {
   let pwd = document.getElementById("pwd").value;
   let pwdrepeat = document.getElementById("pwdrepeat").value;
   let email = document.getElementById("email").value;
-
+// Test que tous les champs sont remplis
   if (
     name.trim() === "" ||
     surname.trim() === "" ||
@@ -29,29 +29,39 @@ function valider() {
   ) {
     document.getElementById("lblMessage").innerHTML =
       "<br/><div class='d-grid alert alert-danger' role='alert'>Renseigner tous les champs&nbsp;!!!!</div>";
-  } else {
-    if (uid.trim().length < 6) {
-      document.getElementById("lblMessage").innerHTML =
-        "<br/><div class='d-grid alert alert-danger' role='alert'>Le pseudo ne doit pas faire moins de 6 caractères</div>";
-        if (pwd.trim().length < 6 || pwd.length > 12) {
-          document.getElementById("lblMessage").innerHTML =
-            "<br/><div class='d-grid alert alert-danger' role='alert'>Votre mot de passe doit entre compris entre 6 caractères et 12 caractères</div>";
-            if (pwd != pwdrepeat) {
-              document.getElementById("lblMessage").innerHTML =
-                "<br/><div class='d-grid alert alert-danger' role='alert'>Les deux mots de passe doivent être identiques</div>";
-            }
-        }
-    }
-    
-     else {
-      document.getElementById("formulaireAuthentification").submit();
-      ("<br/><div class='d-grid alert alert-danger' role='alert'>Compte crée</div>");
-      //alert("Votre compte est crée ! Vous pouvez vous connecter.");
-      //window.alert("<div class='modal' tabindex='-1'><div class='modal-dialog'><div class='modal-content'><div class='modal-header'><h5 class='modal-title'>Modal title</h5><button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button></div><div class='modal-body'><p>Modal body text goes here.</p></div><div class='modal-footer'><button type='button' class='btn btn-secondary' data-bs-dismiss='modal'>Close</button><button type='button' class='btn btn-primary'>Save changes</button></div></div></div></div>");
-      window.location = "login.php"; // Redirection vers la page de login
-
-    }
-    
+  }
+  // Test que le pseudo fait plus de 6 caractères
+  else if (uid.trim().length < 6) {
+    document.getElementById("lblMessage").innerHTML =
+      "<br/><div class='d-grid alert alert-danger' role='alert'>Le pseudo ne doit pas faire moins de 6 caractères</div>";
+  }
+  // Test de la longueur du mot de passe
+  else if (pwd.trim().length < 6 || pwd.length > 16) {
+    document.getElementById("lblMessage").innerHTML =
+      "<br/><div class='d-grid alert alert-danger' role='alert'>Votre mot de passe doit entre compris entre 6 caractères et 16 caractères</div>";
+  }
+  // Test si le deux mots de passe sont identiques
+  else if (pwd != pwdrepeat) {
+    document.getElementById("lblMessage").innerHTML =
+      "<br/><div class='d-grid alert alert-danger' role='alert'>Les deux mots de passe doivent être identiques</div>";
+    // Ajout contrôle sur format de l'email
+  }
+  // Test si la syntaxe de l'email est respectée (avec une fonction qui appelle une expression régulière)
+  else if (!isEmail(email)) {
+    document.getElementById("lblMessage").innerHTML =
+      "<br/><div class='d-grid alert alert-danger' role='alert'>L'adresse email n'est pas correct&nbsp;!</div>";
+  }
+    // Test si le mot de passe est assez robuste (avec une fonction qui appelle une expression régulière)
+  else if (!isMDPFort(pwd)) {
+    document.getElementById("lblMessage").innerHTML =
+      "<br/><div class='d-grid alert alert-danger' role='alert'>Le mot de passe n'est pas assez robuste&nbsp;!</div>";
+  } 
+  // Si tout est bon, le compte est crée
+  else {
+    document.getElementById("lblMessage").innerHTML =
+      "<br/><div class='d-grid alert alert-success' role='alert'>Compte crée</div>";
+    document.getElementById("formulaireAuthentification").submit();
+    window.location = "login.php"; // Redirection vers la page de login
   }
 }
 window.onload = init;

@@ -2,7 +2,7 @@
  login.js
  */
  document.getElementById("uid").value = "Pseudo10";
- document.getElementById("pwd").value = "canada";
+ document.getElementById("pwd").value = "f2N.J^Fd2Q75=x)e";
 
  document.getElementById("rememberPasswordCheck").onclick = voirmdp
 

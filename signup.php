@@ -29,11 +29,11 @@ include_once 'header.php';
                 <label class="form-label" for="uid">Pseudo&nbsp;:</label>
               </div>
               <div class="form-floating mb-3">
-                <input type="password" id="pwd" class="form-control" placeholder="Mot de passe" autocomplete="on" name="pwd" value="canada">
+                <input type="password" id="pwd" class="form-control" placeholder="Mot de passe" autocomplete="on" name="pwd" value="f2N.J^Fd2Q75=x)e">
                 <label class="form-label" for="pwd">Mot de passe&nbsp;:</label>
               </div>
               <div class="form-floating mb-3">
-                <input type="password" id="pwdrepeat" class="form-control basicAutoComplete" placeholder="Mot de passe" autocomplete="on" name="pwdrepeat" aria-describedby="mdp2Aide" value="canada">
+                <input type="password" id="pwdrepeat" class="form-control basicAutoComplete" placeholder="Mot de passe" autocomplete="on" name="pwdrepeat" aria-describedby="mdp2Aide" value="f2N.J^Fd2Q75=x)e">
                 <label class="form-label" for="pwdrepeat">Mot de passe&nbsp;:</label>
                 <small id="mdp2Aide" class="form-text text-muted">Saisir une nouvelle fois votre mot de passe</small>
               </div>
@@ -63,6 +63,7 @@ include_once 'header.php';
 </section>
 <script src="./js/login.js"></script>
 <script src="./js/inscription.js"></script>
+<script src="./js/ControlesER.js"></script>
 <?php
 include_once 'footer.php';
 ?>
