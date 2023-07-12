@@ -2,6 +2,10 @@
 include_once 'header.php';
 ?>
 <section>
+        <!-- BackToTop Button -->
+        <a href="javascript:void(0);" id="backToTop" class="back-to-top">
+        <i class="arrow"></i><i class="arrow"></i>
+    </a>
     <div class="container">
         <div class="row row-cols-1 row-cols-md-2 g-4">
             <div class="col">
@@ -178,7 +182,6 @@ include_once 'header.php';
                 </div>
             </div>
         </div>
-
 </section>
 <script src="./js/random.js"></script>
 <?php

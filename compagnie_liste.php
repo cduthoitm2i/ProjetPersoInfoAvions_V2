@@ -2,6 +2,10 @@
 include_once 'header.php';
 ?>
 <section>
+    <!-- BackToTop Button -->
+    <a href="javascript:void(0);" id="backToTop" class="back-to-top">
+        <i class="arrow"></i><i class="arrow"></i>
+    </a>
     <div class="container">
         <h1>Liste des compagnies aériennes</h1>
         <?php
@@ -38,12 +42,12 @@ include_once 'header.php';
                                         <?php
                                         while ($data = $result->fetch(PDO::FETCH_ASSOC)) {
                                         ?>
-                                             <tr>
+                                            <tr>
                                                 <td class='small' style="vertical-align:middle"><a href="./ficheCompagnie.php?nomCompagnie=<?php echo $data['nom_compagnie']; ?>&paysCompagnie=<?php echo $data['pays_compagnie']; ?>"><?php echo $data['nom_compagnie']; ?></a></td>
                                                 <!--<td class='small' style="vertical-align:middle"><a href="./ficheCompagnie.php?nomCompagnie=<?php echo $data['nom_compagnie']; ?>"><?php echo $data['nom_compagnie']; ?></a></td>-->
-                                                <td class='small' style="vertical-align:middle"><img src="./images/logo_pays/<?php echo $data['drapeau_pays']?>" style="width:25px" alt="Drapeau"/> <?php echo $data['pays_compagnie']?></td>
-                                                <td class='small' style="text-align:center;vertical-align:middle"><a href="https://<?php echo $data['site_web_compagnie']?>" target="_blank"><img src="./images/logo_compagnie/<?php echo $data['logo_compagnie']?>" style="width:100px" alt="Logo compagnie"/></a></td>
-                                                <td class='small' style="vertical-align:middle"><a href="https://<?php echo $data['site_web_compagnie']?>" target="_blank"><?php echo $data['site_web_compagnie']?></a></td>
+                                                <td class='small' style="vertical-align:middle"><img src="./images/logo_pays/<?php echo $data['drapeau_pays'] ?>" style="width:25px" alt="Drapeau" /> <?php echo $data['pays_compagnie'] ?></td>
+                                                <td class='small' style="text-align:center;vertical-align:middle"><a href="https://<?php echo $data['site_web_compagnie'] ?>" target="_blank"><img src="./images/logo_compagnie/<?php echo $data['logo_compagnie'] ?>" style="width:100px" alt="Logo compagnie" /></a></td>
+                                                <td class='small' style="vertical-align:middle"><a href="https://<?php echo $data['site_web_compagnie'] ?>" target="_blank"><?php echo $data['site_web_compagnie'] ?></a></td>
                                                 <td class='small' style="vertical-align:middle"><?php echo $data['statut_compagnie']; ?></td>
                                             </tr>
                                         <?php
@@ -62,7 +66,7 @@ include_once 'header.php';
                     </div>
                 </div>
             </div>
-        </div>
+    </div>
     </div>
 </section>
 <?php

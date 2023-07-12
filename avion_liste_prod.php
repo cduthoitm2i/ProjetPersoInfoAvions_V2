@@ -2,6 +2,10 @@
 include_once 'header.php';
 ?>
 <section>
+    <!-- BackToTop Button -->
+    <a href="javascript:void(0);" id="backToTop" class="back-to-top">
+        <i class="arrow"></i><i class="arrow"></i>
+    </a>
     <div class="container">
         <h1>Liste de production</h1>
         <?php
@@ -17,7 +21,7 @@ include_once 'header.php';
         try {
             //$query = "SELECT * FROM `avion`";
             // Nouvelle requête SQL faisant le lien avec la table Compagnie
-            $query = "SELECT * FROM avion a INNER JOIN compagnie c ON a.id_compagnie = c.id_compagnie ORDER BY a.id_compagnie"; 
+            $query = "SELECT * FROM avion a INNER JOIN compagnie c ON a.id_compagnie = c.id_compagnie ORDER BY a.id_compagnie";
             $result = $pdo->query($query);
         ?>
 
@@ -36,7 +40,7 @@ include_once 'header.php';
                                             <th style="text-align:center;vertical-align:middle">Immatriculation</th>
                                             <th style="text-align:center;vertical-align:middle">Statut</th>
                                         </tr>
-                                      </thead>
+                                    </thead>
                                     <tbody>
                                         <?php
                                         while ($data = $result->fetch(PDO::FETCH_ASSOC)) {
@@ -47,9 +51,9 @@ include_once 'header.php';
                                                 <td class='small'><?php echo $data['modele_avion']; ?></td>
                                                 <td class='small'><a href="./ficheCompagnie.php?nomCompagnie=<?php echo $data['nom_compagnie']; ?>"><?php echo $data['nom_compagnie']; ?></a></td>
                                                 <td class='small'>
-                                                    <?php $timestamp = strtotime($data['date_premier_vol_avion']); 
-                                                        $newdatePremierVol = date("d-m-Y", $timestamp);
-                                                        echo "$newdatePremierVol";?>
+                                                    <?php $timestamp = strtotime($data['date_premier_vol_avion']);
+                                                    $newdatePremierVol = date("d-m-Y", $timestamp);
+                                                    echo "$newdatePremierVol"; ?>
                                                 </td>
                                                 <td class='small'><a href="#"><?php echo $data['immatriculation_compagnie_avion']; ?></a></td>
                                                 <td class='small'><?php echo $data['statut_avion']; ?></td>
@@ -70,7 +74,7 @@ include_once 'header.php';
                     </div>
                 </div>
             </div>
-        </div>
+    </div>
     </div>
 </section>
 <?php

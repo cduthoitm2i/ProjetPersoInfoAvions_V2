@@ -2,6 +2,10 @@
 include_once 'header.php';
 ?>
 <section>
+    <!-- BackToTop Button -->
+    <a href="javascript:void(0);" id="backToTop" class="back-to-top">
+        <i class="arrow"></i><i class="arrow"></i>
+    </a>
     <div class="container">
         <h1>Liste production Airbus A310</h1>
         <?php
@@ -32,7 +36,7 @@ include_once 'header.php';
                             <div class="table-responsive">
                                 <table id="liste_avion" style="width:100%" class="table table-bordered table-hover dt-responsive">
                                     <thead>
-                                    <tr>
+                                        <tr>
                                             <th style="text-align:center;vertical-align:middle"><strong>MSN</strong></th>
                                             <th style="text-align:center;vertical-align:middle"><strong>Type</strong></th>
                                             <th style="text-align:center;vertical-align:middle"><strong>Opérateur</strong></th>
@@ -51,9 +55,9 @@ include_once 'header.php';
                                                 <td class='small'><?php echo $data['modele_avion']; ?></td>
                                                 <td class='small'><a href="./ficheCompagnie.php?nomCompagnie=<?php echo $data['nom_compagnie']; ?>"><?php echo $data['nom_compagnie']; ?></a></td>
                                                 <td class='small'>
-                                                    <?php $timestamp = strtotime($data['date_premier_vol_avion']); 
-                                                        $newdatePremierVol = date("d-m-Y", $timestamp);
-                                                        echo "$newdatePremierVol";?>
+                                                    <?php $timestamp = strtotime($data['date_premier_vol_avion']);
+                                                    $newdatePremierVol = date("d-m-Y", $timestamp);
+                                                    echo "$newdatePremierVol"; ?>
                                                 </td>
                                                 <td class='small'><a href="#"><?php echo $data['immatriculation_compagnie_avion']; ?></a></td>
                                                 <td class='small'><?php echo $data['statut_avion']; ?></td>

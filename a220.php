@@ -3,12 +3,16 @@ include_once 'header.php';
 include './includes/setvariable.php';
 ?>
 <section>
+            <!-- BackToTop Button -->
+            <a href="javascript:void(0);" id="backToTop" class="back-to-top">
+        <i class="arrow"></i><i class="arrow"></i>
+    </a>
     <div class="container">
         <h1>Liste production Airbus A220</h1>
         <?php
         require_once './lib/Connexion.php';
         require_once './daos/clientDAOprod.php';
-        $type= filter_input(INPUT_GET,"type");
+        $type = filter_input(INPUT_GET, "type");
         $pdo = seConnecter("./conf/monsite.ini");
 
         // var_dump ($pdo);
@@ -51,9 +55,9 @@ include './includes/setvariable.php';
                                                 <td class='small'><?php echo $data['modele_avion']; ?></td>
                                                 <td class='small'><a href="./ficheCompagnie.php?nomCompagnie=<?php echo $data['nom_compagnie']; ?>"><?php echo $data['nom_compagnie']; ?></a></td>
                                                 <td class='small'>
-                                                    <?php $timestamp = strtotime($data['date_premier_vol_avion']); 
-                                                        $newdatePremierVol = date("d-m-Y", $timestamp);
-                                                        echo "$newdatePremierVol";?>
+                                                    <?php $timestamp = strtotime($data['date_premier_vol_avion']);
+                                                    $newdatePremierVol = date("d-m-Y", $timestamp);
+                                                    echo "$newdatePremierVol"; ?>
                                                 </td>
                                                 <td class='small'><a href="#"><?php echo $data['immatriculation_compagnie_avion']; ?></a></td>
                                                 <td class='small'><?php echo $data['statut_avion']; ?></td>
