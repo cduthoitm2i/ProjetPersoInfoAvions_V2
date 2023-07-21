@@ -114,7 +114,7 @@ function loginUser($conn, $username, $pwd) {
 	$checkPwd = password_verify($pwd, $pwdHashed);
 
 	if ($checkPwd === false) {
-		header("location: ../login.php?error=wronglogin");
+		header("location: ../login.php?error=wrongpassword");
 		exit();
 	}
 	elseif ($checkPwd === true) {
