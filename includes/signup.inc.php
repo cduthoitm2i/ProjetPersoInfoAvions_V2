@@ -1,12 +1,12 @@
 <?php
 if (isset($_POST["BtSubmit"])) {
   // On récupère les informations du fichier signup.php via la bouton type submit
-  $name = $_POST["name"];
-  $surname = $_POST["surname"];
-  $email = $_POST["email"];
-  $username = $_POST["uid"];
-  $pwd = $_POST["pwd"];
-  $pwdRepeat = $_POST["pwdrepeat"];
+  $name = htmlspecialchars($_POST["name"]);
+  $surname = htmlspecialchars($_POST["surname"]);
+  $email = htmlspecialchars($_POST["email"]);
+  $username = htmlspecialchars($_POST["uid"]);
+  $pwd = htmlspecialchars($_POST["pwd"]);
+  $pwdRepeat = htmlspecialchars($_POST["pwdrepeat"]);
 
   // on fait le lien vers les fonctions de contôle et la connexion à la base
   require_once "./dbh.inc.php";

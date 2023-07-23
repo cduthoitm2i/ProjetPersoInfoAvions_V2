@@ -3,8 +3,8 @@ include_once 'header.php';
 include './includes/setvariable.php';
 ?>
 <section>
-            <!-- BackToTop Button -->
-            <a href="javascript:void(0);" id="backToTop" class="back-to-top">
+    <!-- BackToTop Button -->
+    <a href="javascript:void(0);" id="backToTop" class="back-to-top">
         <i class="arrow"></i><i class="arrow"></i>
     </a>
     <div class="container">
@@ -27,6 +27,7 @@ include './includes/setvariable.php';
         // On boucle sur les colonnes à l'intérieur de la boucle pour les lignes
         try {
             $query = "SELECT * FROM avion WHERE nom_avion = 'A220'";
+            //$query = "SELECT * FROM avion WHERE nom_avion = 'nom_avion'";
             $result = $pdo->query($query);
         ?>
             <div class="row py-5">

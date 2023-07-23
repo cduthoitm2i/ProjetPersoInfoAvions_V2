@@ -3,8 +3,8 @@
 if (isset($_POST["btSubmit"])) {
 
   // on récupère les informations des champs de saisie
-  $username = $_POST["uid"];
-  $pwd = $_POST["pwd"];
+  $username = htmlspecialchars($_POST["uid"]);
+  $pwd = htmlspecialchars($_POST["pwd"]);
 
   // on point sur le fichier functions.inc.php pour effectuer des contrôles
 

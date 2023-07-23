@@ -41,10 +41,10 @@ include_once 'header.php';
                 <input class="form-check-input" type="checkbox" value="" id="rememberPasswordCheck">
                 <label class="form-check-label" for="rememberPasswordCheck" id="labelcheckbox">Mot de passe visible</label>
               </div>
-              <div class="form-check mb-3">
+              <!--<div class="form-check mb-3">
                 <input class="form-check-input" type="checkbox" value="" id="newsletter">
                 <label class="form-check-label" for="newsletter">Cocher si vous souhaitez obtenir la newsletter&thinsp;?</label>
-              </div>
+              </div>-->
               <div class="d-grid">
                 <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit" name="btSubmit" id="btSubmit">Créer le compte</button>
               </div>
