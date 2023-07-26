@@ -26,33 +26,51 @@ include_once 'header.php';
                 </div>
                 <div class="card mb-5">
                     <div class="card-body">
-                        <h5 class="card-title">Dernières mises à jour avions</h5>
+                        <h5 class="card-title">Derniers avions entrés en  service</h5>
                         <table class="table table-sm table-borderless">
 
                             <tbody>
-                                <tr>
-                                    <td>A320</td>
-                                    <td>Air Canada</td>
-                                    <td>C-GYFY</td>
-                                </tr>
-                                <tr>
-                                    <td>A320</td>
-                                    <td>Air Canada</td>
-                                    <td>C-GYFY</td>
-                                </tr>
-                                <tr>
-                                    <td>A320</td>
-                                    <td>Air Canada</td>
-                                    <td>C-GYFY</td>
-                                </tr>
-                                <tr>
-                                    <td scope="row">A320</td>
-                                    <td>Air Canada</td>
-                                    <td>C-GYFY</td>
-                                </tr>
+                            <?php
+                                require_once './lib/Connexion.php';
+                                require_once './daos/clientDAOprod.php';
+                                $pdo = seConnecter("./conf/monsite.ini");
+                                // var_dump ($pdo);
+
+                                //echo "Sélection de la base avion";
+                                $content = "";
+                                $lines = selectAllPourListeTab($pdo);
+                                $headers = "";
+                                try {
+                                    // On fait une requête SQL sur la totalité de la table mais en évitant les affichages en doublon
+                                    $query = "SELECT DISTINCT * FROM avion ORDER BY date_premier_vol_avion DESC LIMIT 0,5";
+                                    $result = $pdo->query($query);
+                                ?>
+
+                                    <table id="liste_compagnie" style="width:100%" class="table table-sm table-hover table-borderless">
+                                        <tbody>
+                                            <?php
+                                            while ($data = $result->fetch(PDO::FETCH_ASSOC)) {
+
+                                            ?>
+                                                <tr>
+                                                    <td style="vertical-align:middle;width:35%"><a href="./ficheAvion.php?numeroSerieAvion=<?php echo $data['numero_serie_avion'] ?>&nomAvion=<?php echo $data['nom_avion']; ?>"><?php echo $data['modele_avion']; ?></a></td>
+                                                    <td style="vertical-align:middle;width:50%"><a href="./ficheCompagnie.php?nomCompagnie=<?php echo $data['nom_compagnie']; ?>"><?php echo $data['nom_compagnie']; ?></a></td>
+                                                    <td style="vertical-align:middle;width:15%"><a href="./ficheAvion.php?numeroSerieAvion=<?php echo $data['numero_serie_avion'] ?>&nomAvion=<?php echo $data['nom_avion']; ?>"><?php echo $data['immatriculation_compagnie_avion']; ?></a></td>
+                                                </tr>
+
+
+                                            <?php
+                                            }
+                                            ?>
+                                        </tbody>
+                                    </table>
+                                <?php
+                                } catch (PDOException $e) {
+                                    echo "Error: " . $e->getMessage();
+                                } ?>
                             </tbody>
                         </table>
-                        <p class="p-2 card-text text-end"><a href="./avion_liste_prod.php">Plus de mise à jour vers ce lien</a></p>
+                        <p class="p-2 card-text text-end"><a href="./avion_liste_prod_par_date.php">Plus de mise à jour vers ce lien</a></p>
                     </div>
                 </div>
                 <div class="card mb-5">
@@ -99,7 +117,7 @@ include_once 'header.php';
                                 </tr>
                             </tbody>
                         </table>
-                        <p class="p-2 card-text text-end"><a href="./avion_liste_prod.php">Plus de mise à jour vers ce lien</a></p>
+                        <p class="p-2 card-text text-end"><a href="./avion_liste_prod_par_date.php">Plus de mise à jour vers ce lien</a></p>
                     </div>
                 </div>
                 <div class="card mb-5">
@@ -159,8 +177,8 @@ include_once 'header.php';
 
                                             ?>
                                                 <tr>
-                                                    <td class='small' style="vertical-align:middle;width:20%"><a href="https://<?php echo $data['site_web_compagnie'] ?>" target="_blank"><img src="./images/logo_compagnie/<?php echo $data['logo_compagnie'] ?>" style="width:75px" alt="Logo compagnie" /></a></td>
-                                                    <td class='small' style="vertical-align:middle;width:80%"><a href="./ficheCompagnie.php?nomCompagnie=<?php echo $data['nom_compagnie']; ?>"><?php echo $data['nom_compagnie']; ?></a></td>
+                                                    <td style="vertical-align:middle;width:20%"><a href="https://<?php echo $data['site_web_compagnie'] ?>" target="_blank"><img src="./images/logo_compagnie/<?php echo $data['logo_compagnie'] ?>" style="width:75px" alt="Logo compagnie" /></a></td>
+                                                    <td style="vertical-align:middle;width:80%"><a href="./ficheCompagnie.php?nomCompagnie=<?php echo $data['nom_compagnie']; ?>"><?php echo $data['nom_compagnie']; ?></a></td>
                                                 </tr>
 
 
