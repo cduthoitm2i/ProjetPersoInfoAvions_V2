@@ -1,5 +1,6 @@
 <?php
 include_once 'header.php';
+include './includes/setvariable.php';
 ?>
 <section>
     <!-- BackToTop Button -->
@@ -7,22 +8,18 @@ include_once 'header.php';
         <i class="arrow"></i><i class="arrow"></i>
     </a>
     <div class="container">
-        <h1>Liste production Airbus A320</h1>
+        <h1>Liste production Airbus <?php echo "$nomAvion" ?></h1>
         <?php
-
-        /* Tests.php */
-
         require_once './lib/Connexion.php';
-        require_once './daos/clientDAOa320.php';
-
+        require_once './daos/clientDAOprod.php';
+        $type = filter_input(INPUT_GET, "type");
         $pdo = seConnecter("./conf/monsite.ini");
 
         // var_dump ($pdo);
 
-        //echo "<hr>Sélection de la base avion<hr>";
+        //echo "Sélection de la base avion";
         $content = "";
         $lines = selectAllPourListeTab($pdo);
-
         $headers = "";
 
 
@@ -30,8 +27,12 @@ include_once 'header.php';
         // On fait le corps du tableau
         // On boucle sur les colonnes à l'intérieur de la boucle pour les lignes
         try {
-            $query = "SELECT * FROM avion WHERE nom_avion = 'A320'";
+            //$query = "SELECT * FROM avion WHERE nom_avion = '" + $data['nom_avion'] + "'";
+            $query = "SELECT * FROM avion WHERE nom_avion = '$nomAvion'";
+            //$query = "SELECT * FROM avion WHERE nom_avion =\'" . $_GET['nom_avion'] . "\''";
+            //$query = "SELECT * FROM avion WHERE nom_avion = 'A220";
             $result = $pdo->query($query);
+
         ?>
             <div class="row py-5">
                 <div class="col-lg-12 mx-auto">
@@ -54,7 +55,7 @@ include_once 'header.php';
                                         while ($data = $result->fetch(PDO::FETCH_ASSOC)) {
 
                                         ?>
-                                            <<tr>
+                                            <tr>
                                                 <td class='small'><a href="./ficheAvion.php?numeroSerieAvion=<?php echo $data['numero_serie_avion'] ?>&nomAvion=<?php echo $data['nom_avion']; ?>"><?php echo $data['numero_serie_avion']; ?></a></td>
                                                 <td class='small'><?php echo $data['modele_avion']; ?></td>
                                                 <td class='small'><a href="./ficheCompagnie.php?nomCompagnie=<?php echo $data['nom_compagnie']; ?>"><?php echo $data['nom_compagnie']; ?></a></td>
@@ -65,10 +66,10 @@ include_once 'header.php';
                                                 </td>
                                                 <td class='small'><a href="#"><?php echo $data['immatriculation_compagnie_avion']; ?></a></td>
                                                 <td class='small'><?php echo $data['statut_avion']; ?></td>
-                                                </tr>
-                                            <?php
+                                            </tr>
+                                        <?php
                                         }
-                                            ?>
+                                        ?>
                                     </tbody>
                                 </table>
                             <?php
@@ -76,7 +77,8 @@ include_once 'header.php';
                             echo "Error: " . $e->getMessage();
                         } ?>
                             <br>
-                            <p style="text-align:right"><a href="./impPDFa320.php">Enregistrer la liste au format PDF</a></p>
+                            <p style="text-align:right"><a href="./impPDF<?php echo "$nomAvion" ?>.php">Enregistrer la liste au format PDF</a></p>
+                            <!--<p style="text-align:right"><a href="./impPDF.php">Enregistrer la liste au format PDF</a></p>-->
                             </div>
                         </div>
                     </div>

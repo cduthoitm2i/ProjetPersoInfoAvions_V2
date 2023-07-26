@@ -79,7 +79,7 @@ function createUser($conn, $name, $surname, $email, $username, $pwd) {
 	 	header("location: ../signup.php?error=stmtfailed");
 		exit();
 	}
-	// On crypte le mot de passe que l'on envoi ensuite dans la bd users
+	// On hash le mot de passe que l'on envoi ensuite dans la bd users
 	$hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
 
 	mysqli_stmt_bind_param($stmt, "sssss", $name, $surname, $email, $username, $hashedPwd);

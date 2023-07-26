@@ -78,23 +78,23 @@ include_once 'header.php';
                                 <tr>
                                     <!--Syntaxe pour éviter un tas de fichier en trop-->
                                     <!--<td><a href="select_type_avion.php?nom_avion=a220">Airbus A220</a></td>-->
-                                    <td><a href="a220.php">Airbus A220</a></td>
-                                    <td><a href="a300.php">Airbus A300</a></td>
-                                    <td><a href="a310.php">Airbus A310</a></td>
+                                    <td><a href="avion.php?nomAvion=A220">Airbus A220</a></td>
+                                    <td><a href="avion.php?nomAvion=A300">Airbus A300</a></td>
+                                    <td><a href="avion.php?nomAvion=A310">Airbus A310</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a href="a318.php">Airbus A318</a></td>
-                                    <td><a href="a319.php">Airbus A319</a></td>
-                                    <td><a href="a320.php">Airbus A320</a></td>
+                                    <td><a href="avion.php?nomAvion=A318">Airbus A318</a></td>
+                                    <td><a href="avion.php?nomAvion=A319">Airbus A319</a></td>
+                                    <td><a href="avion.php?nomAvion=A320">Airbus A320</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a href="a321.php">Airbus A321</a></td>
-                                    <td><a href="a330.php">Airbus A330</a></td>
-                                    <td><a href="a340.php">Airbus A340</a></td>
+                                    <td><a href="avion.php?nomAvion=A321">Airbus A321</a></td>
+                                    <td><a href="avion.php?nomAvion=A330">Airbus A330</a></td>
+                                    <td><a href="avion.php?nomAvion=A340">Airbus A340</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a href="a350.php">Airbus A350</a></td>
-                                    <td><a href="a380.php">Airbus A380</a></td>
+                                    <td><a href="avion.php?nomAvion=A350">Airbus A350</a></td>
+                                    <td><a href="avion.php?nomAvion=A380">Airbus A380</a></td>
                                     <td></td>
                                 </tr>
                             </tbody>
