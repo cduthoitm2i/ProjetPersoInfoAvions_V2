@@ -8,6 +8,7 @@ include_once 'header.php';
     </a>
     <div class="container">
         <h1>Liste de production</h1>
+        <h2>(par date de première mise en circulation)</h2>
         <?php
         require_once './lib/Connexion.php';
         require_once './daos/clientDAOprod.php';

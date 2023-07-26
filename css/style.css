@@ -102,11 +102,12 @@ body {
 
 
 /* CSS pour liste avions*/
-.container h1 {
+.container h1, .container h2 {
   color: royalblue;
   text-align: center;
 
 }
+
 
 
 /* CSS pour liste en tableau */
