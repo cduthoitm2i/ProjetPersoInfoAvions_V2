@@ -119,6 +119,7 @@ if (isset($email, $sujet, $nom, $prenom, $message)) {
             </div>
         </div>
     </div>
+
 </section>
 <?php
 include_once 'footer.php';

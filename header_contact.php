@@ -59,6 +59,8 @@ include_once 'includes/functions.inc.php';
   <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
   <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
   <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+
+
 </head>
 
 <body>
@@ -91,19 +93,19 @@ include_once 'includes/functions.inc.php';
               <li><a class="dropdown-item" href="./compagnie_liste_par_pays.php">Liste par pays</a></li>
             </ul>
           </li>
-          <li class="nav-item">
+          <!--<li class="nav-item">
             <a class="nav-link" href="./boutique.php">Boutique</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="./photo.php">Photographie</a>
-          </li>
-          <li class="nav-item dropdown">
+          </li>-->
+          <!--<li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Aéroport</a>
             <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
               <li><a class="dropdown-item" href="./aeroport_recherche.php">Rechercher un aéroport</a></li>
               <li><a class="dropdown-item" href="./aeroport_par_pays.php">Liste des aéroports par pays</a></li>
             </ul>
-          </li>
+          </li>-->
           <li class="nav-item">
             <a class="nav-link" href="./contact.php">Contact</a>
           </li>

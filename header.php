@@ -54,6 +54,9 @@
   <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
   <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
   <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+
+
+
 </head>
 <script>
 $(document).ready(function(){
@@ -101,12 +104,12 @@ $(document).ready(function(){
               <li><a class="dropdown-item" href="./compagnie_liste_par_pays.php">Liste par pays</a></li>
             </ul>
           </li>
-          <li class="nav-item">
+          <!--<li class="nav-item">
             <a class="nav-link" href="./boutique.php">Boutique</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="./photo.php">Photographie</a>
-          </li>
+          </li>-->
           <li class="nav-item">
             <a class="nav-link" href="./contact.php">Contact</a>
           </li>

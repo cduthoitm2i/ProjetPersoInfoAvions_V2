@@ -1,9 +1,9 @@
 <?php
 include_once 'header.php';
 ?>
-    <section>
-
-    </section>
+<section>
+    
+</section>
     <?php
 include_once 'footer.php';
 ?>
