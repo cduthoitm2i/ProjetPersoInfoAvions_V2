@@ -11,11 +11,13 @@
  function voirmdp(){
      if(checkbox){
          document.getElementById("pwd").setAttribute("type","text")
+         document.getElementById("pwdrepeat").setAttribute("type","text")
          document.getElementById("labelcheckbox").innerHTML = "Masquer le mot de passe"
          checkbox=false
      }
      else{
          document.getElementById("pwd").setAttribute("type","password")
+         document.getElementById("pwdrepeat").setAttribute("type","password")
          document.getElementById("labelcheckbox").innerHTML = "Afficher le mot de passe" 
          checkbox=true
      }
