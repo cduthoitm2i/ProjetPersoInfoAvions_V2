@@ -95,10 +95,10 @@ include_once 'includes/functions.inc.php';
           </li>
           <!--<li class="nav-item">
             <a class="nav-link" href="./boutique.php">Boutique</a>
-          </li>
+          </li>-->
           <li class="nav-item">
             <a class="nav-link" href="./photo.php">Photographie</a>
-          </li>-->
+          </li>
           <!--<li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Aéroport</a>
             <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">

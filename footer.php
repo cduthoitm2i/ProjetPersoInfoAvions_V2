@@ -38,6 +38,20 @@
             $(table.column(idx).header()).append('<span class="sort-icon"/>');
         });
     });
+    $(document).ready(function() {
+        var table = $('#liste_avion_par_date').DataTable({
+            "order": [0, 'desc'],
+            "pageLength": 25
+        });
+
+        table.columns().iterator('column', function(ctx, idx) {
+            $(table.column(idx).header()).append('<span class="sort-icon"/>');
+        });
+    });
+
+
+
+
 </script>
 <script>
 $(document).ready(function(){

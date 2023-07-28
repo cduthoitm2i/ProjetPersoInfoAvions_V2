@@ -106,10 +106,10 @@ $(document).ready(function(){
           </li>
           <!--<li class="nav-item">
             <a class="nav-link" href="./boutique.php">Boutique</a>
-          </li>
+          </li>-->
           <li class="nav-item">
             <a class="nav-link" href="./photo.php">Photographie</a>
-          </li>-->
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="./contact.php">Contact</a>
           </li>
@@ -122,7 +122,6 @@ $(document).ready(function(){
             <li>
               <a class="dropdown-item" href="./profil.php">Mon profil</a>
             </li>
-
             <li>
               <a class="dropdown-item" href="./logout.php">Déconnexion</a>
             </li>
