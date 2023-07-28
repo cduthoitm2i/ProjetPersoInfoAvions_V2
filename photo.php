@@ -31,49 +31,22 @@ include_once 'header.php';
                 <div class="row py-5">
                     <div class="col-md-12 card mb-4">
                         <div class="table-wrap card-body">
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <div class="img col-md-4 col-xs-6 mb-2 p-3">
-                                                <img src="./images/photos/<?php echo $data['photo_avion']; ?>.jpg" style="width:350px" />
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="p-5">
-                                                <div>
-                                                    <table class="table table-borderless" style="width:100%">
-                                                        <tbody>
-                                                            <tr>
-                                                                <td style="vertical-align:middle;width:50%">
-                                                                    <strong>Avion</strong>&nbsp;: <?php echo $data['modele_avion']; ?><br/>
-                                                                    <strong>Compagnie</strong>&nbsp;: <?php echo $data['nom_compagnie']; ?>
-                                                                </td>
-                                                                <td style="vertical-align:middle;width:50%">
-                                                                    <strong>Immatriculation</strong>&nbsp;: <?php echo $data['immatriculation_compagnie_avion']; ?><br/>
-                                                                    <strong>MSN</strong>&nbsp;: <?php echo $data['numero_serie_avion']; ?>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <strong>Lieu et date</strong>&nbsp;: <br/>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <strong>Photographe</strong>&nbsp;: <br/>
-                                                                </td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-
-
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div class="container text-left">
+                                <div class="row align-items-start">
+                                    <div class="col">
+                                        <img src="./images/photos/<?php echo $data['photo_avion']; ?>.jpg" style="width:300px" />
+                                    </div>
+                                    <div class="col">
+                                        <strong>Avion</strong>&nbsp;: <?php echo $data['modele_avion']; ?><br />
+                                        <strong>Compagnie</strong>&nbsp;: <?php echo $data['nom_compagnie']; ?>
+                                    </div>
+                                    <div class="col">
+                                        <strong>Immatriculation</strong>&nbsp;: <?php echo $data['immatriculation_compagnie_avion']; ?><br />
+                                        <strong>MSN</strong>&nbsp;: <?php echo $data['numero_serie_avion']; ?>
+                                    </div>
+                                </div>
+                            </div>
+                            
                         </div>
                     </div>
                 </div>
