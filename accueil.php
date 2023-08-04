@@ -117,7 +117,7 @@ include_once 'header.php';
                                 </tr>
                             </tbody>
                         </table>
-                        <p class="p-2 card-text text-end"><a href="./avion_liste_prod_par_date.php">Plus de mise à jour vers ce lien</a></p>
+                        <p class="p-2 card-text text-end"><a href="./avion_liste_prod.php">Plus de mise à jour vers ce lien</a></p>
                     </div>
                 </div>
                 <div class="card mb-5">

@@ -11,7 +11,8 @@ include_once 'header.php';
         <?php
         require_once './lib/Connexion.php';
         require_once './daos/clientDAOprod.php';
-        $type = filter_input(INPUT_GET, "type");
+        $nomAvion = filter_input(INPUT_GET, "nomAvion");
+        $numeroSerieAvion = filter_input(INPUT_GET, "numeroSerieAvion");
         $pdo = seConnecter("./conf/monsite.ini");
 
         $content = "";
@@ -27,6 +28,8 @@ include_once 'header.php';
             INNER JOIN compagnie c 
             ON a.id_compagnie = c.id_compagnie 
             WHERE (NOT(photo_avion='')) 
+            AND (nom_avion='$nomAvion' 
+            AND numero_serie_avion='$numeroSerieAvion') 
             ORDER BY nom_avion 
             DESC";
             $result = $pdo->query($query);
@@ -74,6 +77,12 @@ include_once 'header.php';
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
         } ?>
+
+
+
+
+
+
     </div>
 </section>
 <script>

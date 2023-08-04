@@ -1,17 +1,21 @@
 <?php
-  session_start();
-  include_once 'includes/functions.inc.php';
+session_start();
+include_once 'includes/functions.inc.php';
 ?>
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="utf-8">
   <title>Mon projet Info Avions Airbus</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-  <!-- Ma CSS -->
+  <!-- Mes CSS -->
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/scroll.css">
+
+
+
 
   <!-- CSS et JS Bootstrap 5 (version CDN) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
@@ -30,7 +34,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.css" />
   <!--<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.js"></script>-->
-  <script src="./lib/datatables.min.js"></script>
+
   <script src="https://kit.fontawesome.com/0005c4531c.js" crossorigin="anonymous"></script>
 
   <!-- Mon favicon -->
@@ -59,23 +63,24 @@
 
 </head>
 <script>
-$(document).ready(function(){
+  $(document).ready(function() {
     var btn = $('#backToTop');
     $(window).on('scroll', function() {
-        if ($(window).scrollTop() > 300) {
-            btn.addClass('show');
-        } else {
-            btn.removeClass('show');
-        }
+      if ($(window).scrollTop() > 300) {
+        btn.addClass('show');
+      } else {
+        btn.removeClass('show');
+      }
     });
     btn.on('click', function(e) {
-        e.preventDefault();
-        $('html, body').animate({
-            scrollTop: 0
-        }, '300');
+      e.preventDefault();
+      $('html, body').animate({
+        scrollTop: 0
+      }, '300');
     });
-});
+  });
 </script>
+
 <body>
   <!-- Ma navbar Bootstrap 5-->
   <!-- ajout du style background-color: #e3f2fd;" dans la balise nav de départ pour faire un bleu pale -->
@@ -99,7 +104,7 @@ $(document).ready(function(){
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Compagnie</a>
             <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
-               <!--<li><a class="dropdown-item" href="./compagnie_recherche.php">Rechercher une compagnie</a></li>-->
+              <!--<li><a class="dropdown-item" href="./compagnie_recherche.php">Rechercher une compagnie</a></li>-->
               <li><a class="dropdown-item" href="./compagnie_liste.php">Liste des compagnies</a></li>
               <li><a class="dropdown-item" href="./compagnie_liste_par_pays.php">Liste par pays</a></li>
             </ul>
@@ -148,11 +153,11 @@ $(document).ready(function(){
           <button class="btn btn-outline-success" type="submit">Rechercher</button>
         </form>
         <p>
-            <?php
-            if (isSet($result)) {
-                echo $result;
-            }
-            ?>
+          <?php
+          if (isset($result)) {
+            echo $result;
+          }
+          ?>
         </p>
       </div>
     </div>

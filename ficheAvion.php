@@ -70,10 +70,10 @@ include './includes/setvariable.php';
                                 <tr>
                                     <td class="col-md-3 small">Configuration sièges&nbsp;:</td>
                                     <td class="col-md-4 small">
-                                        <a href="" data-toggle="tooltip" data-placement="top" title="Première classe"><?php echo $data['config_siege_avion_F']?></a>
-                                        <a href="" data-toggle="tooltip" data-placement="top" title="Classe affaire"><?php echo $data['config_siege_avion_C']?></a>
-                                        <a href="" data-toggle="tooltip" data-placement="top" title="Classe économique supérieure"><?php echo $data['config_siege_avion_W']?></a>
-                                        <a href="" data-toggle="tooltip" data-placement="top" title="Classe économique"><?php echo $data['config_siege_avion_Y']?></a>
+                                        <a id="tooltip" href="" data-toggle="tooltip" data-placement="top" title="Première classe"><?php echo $data['config_siege_avion_F']?></a>
+                                        <a id="tooltip" href="" data-toggle="tooltip" data-placement="top" title="Classe affaire"><?php echo $data['config_siege_avion_C']?></a>
+                                        <a id="tooltip" href="" data-toggle="tooltip" data-placement="top" title="Classe économique supérieure"><?php echo $data['config_siege_avion_W']?></a>
+                                        <a id="tooltip" href="" data-toggle="tooltip" data-placement="top" title="Classe économique"><?php echo $data['config_siege_avion_Y']?></a>
                                     </td>
                                 </tr>
                                 <tr>

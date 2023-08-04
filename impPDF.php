@@ -85,7 +85,7 @@
       $curseur->closeCursor();
 
       // --- Sauvegarde vers un fichier
-      $pdf->Output('D', 'liste_<?php echo "$nomAvion" ?>.pdf', true);
+      $pdf->Output('D', 'liste.pdf', true);
    }
    catch(PDOException $e) {
       echo "Echec de l'exécution : " . $e->getMessage();

@@ -15,6 +15,6 @@ if ($file_count > 0) {
     }
     closedir($fp);
 } else {
-    echo "Désolé! Pas d'images dans la galerie!!!";
+    echo "Désolé&nbsp;! Pas d'images dans la galerie&nbsp;!!!";
 }
 ?>

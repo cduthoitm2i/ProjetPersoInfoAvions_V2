@@ -22,7 +22,9 @@
     });*/
     $(document).ready(function() {
         var table = $('#liste_avion').DataTable({
-            "pageLength": 25
+            "pageLength": 25,
+            language: {url: 'https://cdn.datatables.net/plug-ins/1.11.5/i18n/fr-FR.json'
+    }
         });
 
         table.columns().iterator('column', function(ctx, idx) {

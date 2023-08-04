@@ -39,6 +39,7 @@ include_once 'header.php';
                                             <th style="text-align:center;vertical-align:middle">Premier vol</th>
                                             <th style="text-align:center;vertical-align:middle">Immatriculation</th>
                                             <th style="text-align:center;vertical-align:middle">Statut</th>
+                                            <th style="text-align:center;vertical-align:middle"><strong>Photos</strong></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -57,6 +58,12 @@ include_once 'header.php';
                                                 </td>
                                                 <td class='small'><a href="#"><?php echo $data['immatriculation_compagnie_avion']; ?></a></td>
                                                 <td class='small'><?php echo $data['statut_avion']; ?></td>
+                                                <td class='small' style='text-align:center;'><?php if ($data['photo_avion'] <> null) {
+                                                                                                    echo '<a href="./photo_avion.php?numeroSerieAvion=' . $data['numero_serie_avion'] . '&nomAvion=' . $data['nom_avion'] . '">';
+                                                                                                    echo '<img src="./images/svg/camera-fill.svg" />';
+                                                                                                    echo '</a>';
+                                                                                                } ?>
+                                                </td>
                                             </tr>
                                         <?php
                                         }
