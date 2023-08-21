@@ -8,11 +8,23 @@ include_once 'header.php';
     </a>
     <div class="container">
         <h1>Photographies</h1>
+        <!-- Select dropdown -->
+        <div class="d-flex flex-row-reverse bd-highlight mb-3">
+            <form action="photo.php" method="post">
+                <select name="records-limit" id="records-limit" class="custom-select">
+                    <option disabled selected>Records Limit</option>
+                    <?php foreach ([5, 10, 15, 20] as $limit) : ?>
+                        <option <?php if (isset($_SESSION['records-limit']) && $_SESSION['records-limit'] == $limit) echo 'selected'; ?> value="<?= $limit; ?>">
+                            <?= $limit; ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+            </form>
+        </div>
         <?php
         require_once './lib/Connexion.php';
         require_once './daos/clientDAOprod.php';
-        $nomAvion = filter_input(INPUT_GET, "nomAvion");
-        $numeroSerieAvion = filter_input(INPUT_GET, "numeroSerieAvion");
+        $type = filter_input(INPUT_GET, "type");
         $pdo = seConnecter("./conf/monsite.ini");
 
         $content = "";
@@ -28,8 +40,6 @@ include_once 'header.php';
             INNER JOIN compagnie c 
             ON a.id_compagnie = c.id_compagnie 
             WHERE (NOT(photo_avion='')) 
-            AND (nom_avion='$nomAvion' 
-            AND numero_serie_avion='$numeroSerieAvion') 
             ORDER BY nom_avion 
             DESC";
             $result = $pdo->query($query);
@@ -77,14 +87,48 @@ include_once 'header.php';
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
         } ?>
+        <?php
+         $limit = isset($_SESSION['records-limit']) ? $_SESSION['records-limit'] : 5;
+         $page = (isset($_GET['page']) && is_numeric($_GET['page']) ) ? $_GET['page'] : 1;
+         $paginationStart = ($page - 1) * $limit;
 
 
-
+         
+         $avion = $pdo->query("SELECT * FROM avion LIMIT $paginationStart, $limit")->fetchAll();
+         // Get total records
+         $cpt = $pdo->query("SELECT count(id_avion) AS id_avion FROM avion")->fetchAll();
+         $allRecrods = $cpt[0]['id_avion'];
+         
+         // Calculate total pages
+         $totalPages = ceil($allRecrods / $limit);
+         // Prev + Next
+         $prev = $page - 1;
+         $next = $page + 1;
+        ?>
+        <nav aria-label="Page navigation example mt-5">
+            <ul class="pagination justify-content-center">
+                <li class="page-item <?php if($page <= 1){ echo 'disabled'; } ?>">
+                    <a class="page-link"
+                        href="<?php if($page <= 1){ echo '#'; } else { echo "?page=" . $prev; } ?>">Previous</a>
+                </li>
+                <?php for($i = 1; $i <= $totalPages; $i++ ): ?>
+                <li class="page-item <?php if($page == $i) {echo 'active'; } ?>">
+                    <a class="page-link" href="photo.php?page=<?= $i; ?>"> <?= $i; ?> </a>
+                </li>
+                <?php endfor; ?>
+                <li class="page-item <?php if($page >= $totalPages) { echo 'disabled'; } ?>">
+                    <a class="page-link"
+                        href="<?php if($page >= $totalPages){ echo '#'; } else {echo "?page=". $next; } ?>">Next</a>
+                </li>
+            </ul>
+        </nav>
 
 
 
     </div>
 </section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
 <script>
     (function(document) {
         "use strict";
@@ -101,6 +145,12 @@ include_once 'header.php';
             });
         });
     })(document);
+
+    $(document).ready(function() {
+        $('#records-limit').change(function() {
+            $('form').submit();
+        })
+    });
 </script>
 <?php
 include_once 'footer.php';

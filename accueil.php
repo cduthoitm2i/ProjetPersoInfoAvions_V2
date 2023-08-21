@@ -129,7 +129,7 @@ include_once 'header.php';
                             ?>
 
                         </div>
-                        <p class="p-2 card-text text-end"><a href="#">Voir l'ensemble du Top photo 24&nbsp;h</a></p>
+                        <p class="p-2 card-text text-end"><a href="./photo.php">Voir l'ensemble du Top photo 24&nbsp;h</a></p>
                     </div>
                 </div>
                 <div class="card mb-5">
