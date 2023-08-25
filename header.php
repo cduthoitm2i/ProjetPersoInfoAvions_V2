@@ -147,9 +147,9 @@ include_once 'includes/functions.inc.php';
         </li>';
           }
           ?>
-          <li class="nav-item me-3 me-lg-0">
+          <!--<li class="nav-item me-3 me-lg-0">
             <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i></a>
-          </li>
+          </li>-->
         </ul>
         <form class="d-flex" role="search" method="GET" action="./controllers/SearchControllerInTableVersion1.php">
           <input class="form-control me-2" type="search" aria-label="Search" placeholder="Recherche...">
