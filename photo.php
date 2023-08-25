@@ -155,6 +155,10 @@ $next = $page + 1;
         </ul>
     </nav>
 </div>
+
+<?php
+include_once 'footer.php';
+?>
 <script>
     (function(document) {
         "use strict";
@@ -178,6 +182,3 @@ $next = $page + 1;
         })
     });
 </script>
-<?php
-include_once 'footer.php';
-?>
