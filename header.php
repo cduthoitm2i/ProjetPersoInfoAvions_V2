@@ -17,6 +17,7 @@ include_once 'includes/functions.inc.php';
 
 
 
+
   <!-- CSS et JS Bootstrap 5 (version CDN) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
@@ -36,6 +37,8 @@ include_once 'includes/functions.inc.php';
   <!--<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.js"></script>-->
 
   <script src="https://kit.fontawesome.com/0005c4531c.js" crossorigin="anonymous"></script>
+
+  <script src="./lib/datatables.min.js"></script>
 
   <!-- Mon favicon -->
   <link rel="apple-touch-icon-precomposed" sizes="57x57" href="./images/png/apple-touch-icon-57x57.png" />

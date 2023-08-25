@@ -99,7 +99,7 @@ include './includes/setvariable.php';
                     </div>
                 </div>
                 <div class="col">
-                     <div class="row row-cols-1 row-cols-md-2 g-4">
+                    <div class="row row-cols-1 row-cols-md-2 g-4">
                         <div class="card mb-5">
                             <div class="card-body">
                                 <h5 class="card-title">Compagnie&nbsp;: <?php echo $data['nom_compagnie'] ?> <a href="https://<?php echo $data['site_web_compagnie'] ?>" target="_blank"><img src="./images/logo_compagnie/<?php echo $data['logo_compagnie'] ?>" style="width:150px;float:right" alt="Logo compagnie" /></a></h5>
@@ -132,7 +132,6 @@ include './includes/setvariable.php';
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
         <div class="container">
@@ -142,8 +141,6 @@ include './includes/setvariable.php';
                         <div class="container text-left">
                             <div class="row align-items-start">
                                 <div class="col thunb">
-
-
                                     <img class="img-fluid" src="./images/photos/<?php echo $data['photo_avion']; ?>.jpg" data-bs-toggle="modal" data-bs-target="#simple-modal" data-bigimage="./images/photos/<?php echo $data['photo_avion']; ?>.jpg">
                                     <div class="modal fade" role="dialog" tabindex="-1" id="simple-modal">
                                         <div class="modal-dialog" role="document">
@@ -152,8 +149,6 @@ include './includes/setvariable.php';
                                             </div>
                                         </div>
                                     </div>
-
-
                                 </div>
                                 <div class="col">
                                     <strong>Avion</strong>&nbsp;: <?php echo $data['modele_avion']; ?><br />
@@ -165,7 +160,6 @@ include './includes/setvariable.php';
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>

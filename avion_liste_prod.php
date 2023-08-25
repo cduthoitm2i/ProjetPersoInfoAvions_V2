@@ -39,7 +39,7 @@ include_once 'header.php';
                                             <th style="text-align:center;vertical-align:middle">Premier vol</th>
                                             <th style="text-align:center;vertical-align:middle">Immatriculation</th>
                                             <th style="text-align:center;vertical-align:middle">Statut</th>
-                                            <th style="text-align:center;vertical-align:middle"><strong>Photos</strong></th>
+                                            <th style="text-align:center;vertical-align:middle">Photos</th>
                                         </tr>
                                     </thead>
                                     <tbody>

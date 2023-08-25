@@ -1,5 +1,6 @@
 <?php
 include_once 'header.php';
+//include './includes/setvariablecompagnie.php';
 ?>
 <section>
     <!-- BackToTop Button -->
@@ -66,7 +67,7 @@ include_once 'header.php';
                     </div>
                 </div>
             </div>
-    </div>
+        </div>
     </div>
 </section>
 <?php

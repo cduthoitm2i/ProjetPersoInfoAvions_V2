@@ -1,6 +1,6 @@
 <?php
 include_once 'header.php';
-include './includes/setvariablecompagnie.php';
+//include './includes/setvariablecompagnie.php';
 ?>
 <section>
     <!-- BackToTop Button -->
