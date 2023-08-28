@@ -33,7 +33,7 @@ $avion = $connection->query("SELECT * FROM avion a
   ORDER BY nom_avion 
   DESC LIMIT $paginationStart, $limit")->fetchAll();
 // Get total records
-$sql = $connection->query("SELECT count(id_avion) AS id_avion FROM avion  WHERE (NOT(photo_avion=''))")->fetchAll();
+$sql = $connection->query("SELECT count(id_avion) AS id_avion FROM avion WHERE (NOT(photo_avion=''))")->fetchAll();
 $allRecrods = $sql[0]['id_avion'];
 
 // Calculate total pages
@@ -140,7 +140,7 @@ $next = $page + 1;
                 <li class="page-item <?php if ($page == $i) {
                                             echo 'active';
                                         } ?>">
-                    <a class="page-link" href="test.php?page=<?= $i; ?>"> <?= $i; ?> </a>
+                    <a class="page-link" href="photo.php?page=<?= $i; ?>"> <?= $i; ?> </a>
                 </li>
             <?php endfor; ?>
             <li class="page-item <?php if ($page >= $totalPages) {

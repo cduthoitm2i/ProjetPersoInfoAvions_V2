@@ -77,8 +77,12 @@ include './includes/setvariable.php';
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="col-md-3 small">Hex Code&nbsp;:</td>
+                                        <td class="col-md-3 small">Suivi par Hex Code&nbsp;:</td>
                                         <td class="col-md-4 small"><a href="https://globe.adsbexchange.com/?icao=<?php echo $data['hex_code_avion'] ?>" target="_blank"><?php echo $data['hex_code_avion'] ?></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-md-3 small">Suivi par immatriculation&nbsp;:</td>
+                                        <td class="col-md-4 small"><a href="https://www.radarbox.com/data/registration/<?php echo $data['immatriculation_compagnie_avion'] ?>" target="_blank"><?php echo $data['immatriculation_compagnie_avion'] ?></a></td>
                                     </tr>
                                     <tr>
                                         <td class="col-md-3 small">Motorisation&nbsp;:</td>

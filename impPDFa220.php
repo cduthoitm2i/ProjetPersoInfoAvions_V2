@@ -1,5 +1,5 @@
 <?php
-	// --- impPDFa220.php
+	// --- impPDFA220.php
 	header("Content-Type: application/pdf;charset=UTF-8");
 
 	// --- La bibliothèque
@@ -67,7 +67,7 @@
           // On repasse en romain pour toutes les lignes du tableau hors tétière
           $pdf->SetFont('Arial','',12);
           // Cell(Largeur, Hauteur, Texte, [Bords, RC , Alignement, Remplissage, Lien])
-          $pdf->Cell(15, $hauteurLigne, mb_convert_encoding($enregistrement['numero_serie_avion'], "ISO-8859-1"), 1 , 0, 'C', 0);
+          $pdf->Cell(15, $hauteurLigne, mb_convert_encoding($enregistrement['numero_serie_avion'], "UTF-8"), 1 , 0, 'C', 0);
           $pdf->Cell(60, $hauteurLigne, mb_convert_encoding($enregistrement['modele_avion'], "ISO-8859-1"), 1 , 0, 'L', 0);
           $pdf->Cell(80, $hauteurLigne, mb_convert_encoding($enregistrement['nom_compagnie'], "ISO-8859-1"), 1 , 0, 'L', 0);
           $timestamp = strtotime($enregistrement['date_premier_vol_avion']);
